@@ -96,3 +96,48 @@ class Hangman:  # This is the class that defines the hangman game
     ========="""]
         # This dispalys/retunrs the hangman figure based on the attempts taken by the user
         return hang[6 - self.attempts]
+
+    # This function is for the core logic of the game. It is responsible for the gameplay loop where the user guesses letter from the hidden word
+    def play(self):
+        # This is a text dispaly
+        print("Welcome to Hangman!")
+
+        # This is the gameplay loop that ensure the games keeps playing until all conditions are met
+        while True:
+            # Display the hangman figure
+            print(self.display_hangman())
+            # Display the letters when guessed correctly
+            print("\n" + self.display_word())
+            # This is a prompt for thr user to input a letter and stores the guessed letter in the varibale 'guess'
+            guess = input("Guess a letter: ").lower()
+
+            # This if statement is for ensuring only 1 letter was entered
+            if len(guess) != 1 or not guess.isalpha():
+                print("Please enter a single letter.")
+                continue
+
+            # This if statement checks if a letter has been selected already
+            if guess in self.guessed_letters:
+                print("You already guessed that letter.")
+                continue
+
+            # If the letter selected meets the above criteria it is added to the variable 'guess'
+            self.guessed_letters.append(guess)
+
+            # If the guessed letter is in the hidden word - 'Correct!' - is dispalyed
+            if guess in self.word:
+                print("Correct!")
+                # Else - Worg - and the number of attempts left is displayed
+            else:
+                self.attempts -= 1
+                print(f"Wrong! You have {self.attempts} attempts left.")
+
+            # This if statement checks if all underscores (hidden letters) have been guessed correctly and if so, a congrats message is displayed
+            if "_" not in self.display_word():
+                print("Congratulations, you've guessed the word!")
+                break
+
+            # This if statement checks if the user runs out of tries and dispalys a message if they lsot and the word they were trying to guess
+            if self.attempts == 0:
+                print("Sorry, you've run out of attempts. The word was:", self.word)
+                break
