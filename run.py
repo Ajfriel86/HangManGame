@@ -141,3 +141,11 @@ class Hangman:  # This is the class that defines the hangman game
             if self.attempts == 0:
                 print("Sorry, you've run out of attempts. The word was:", self.word)
                 break
+
+            # At the end of the game a prompt is displayed to ask the user if they wish to play again or leave the game
+        play_again = input("Do you want to play again? (y/n): ").lower()
+        if play_again == 'y':
+            return True
+        else:
+            print("Thank you for playing Hangman!")
+            return False
