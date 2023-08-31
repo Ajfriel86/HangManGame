@@ -15,3 +15,11 @@ class Hangman:  # This is the class that defines the hangman game
         self.guessed_letters = []
         # Number of attempts the user has
         self.attempts = 6
+
+    # This function selects a random word from the array list of preselected words depending on the level selected
+    def choose_word(self):
+        # This filters the words depending on their length and then matchs that with the level selected
+        filtered_words = [
+            word for word in self.words if len(word) == self.level]
+        # This returns a random word fropm the filtered words
+        return random.choice(filtered_words)
