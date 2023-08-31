@@ -23,3 +23,19 @@ class Hangman:  # This is the class that defines the hangman game
             word for word in self.words if len(word) == self.level]
         # This returns a random word fropm the filtered words
         return random.choice(filtered_words)
+
+    # This function is for generating a string that represents the word the user is trying to guess
+    def display_word(self):
+        # This initilizes an empty string
+        display = ""
+        # This is a loop that iterate through each letter
+        for letter in self.word:
+            # This checks if the letter selected is correct
+            if letter in self.guessed_letters:
+                # if it is correct it is displayed
+                display += letter
+            else:
+                # If it is not correct the underscore remains
+                display += "_"
+        # This returns the word to be guessed with underscores fif it is inccorect
+        return display
