@@ -39,3 +39,60 @@ class Hangman:  # This is the class that defines the hangman game
                 display += "_"
         # This returns the word to be guessed with underscores fif it is inccorect
         return display
+
+        # This functions displays the various stages of the hangman game
+    def display_hangman(self):
+        # This is the list of hangman stages
+        hang = ["""
+        
+    +---+
+    |   |
+        |
+        |
+        |
+        |
+    =========""", """
+    +---+
+    |   |
+    O   |
+        |
+        |
+        |
+    =========""", """
+    +---+
+    |   |
+    O   |
+    |   |
+        |
+        |
+    =========""", """
+    +---+
+    |   |
+    O   |
+    /|   |
+        |
+        |
+    =========""", """
+    +---+
+    |   |
+    O   |
+    /|\  |
+        |
+        |
+    =========""", """
+    +---+
+    |   |
+    O   |
+    /|\  |
+    /    |
+        |
+    =========""", """
+    +---+
+    |   |
+    O   |
+    /|\  |
+    / \  |
+        |
+    ========="""]
+        # This dispalys/retunrs the hangman figure based on the attempts taken by the user
+        return hang[6 - self.attempts]
