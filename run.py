@@ -157,3 +157,10 @@ words = {
     "medium": ["apple", "banana", "cherry", "grape", "lemon"],
     "hard": ["elephant", "giraffe", "kangaroo", "zebra", "ostrich"]
 }
+
+# Each level is reffered to by its first letter and this corresponds to the level and word length for that level
+level_table = {
+    "E": ("Easy", "3 Letter words"),
+    "M": ("Medium", "5 Letter words"),
+    "H": ("Hard", "7 Letter words")
+}
