@@ -149,3 +149,11 @@ class Hangman:  # This is the class that defines the hangman game
         else:
             print("Thank you for playing Hangman!")
             return False
+
+
+# Each level contains different word lengths and they are stored here
+words = {
+    "easy": ["cat", "dog", "bat", "hat", "pen"],
+    "medium": ["apple", "banana", "cherry", "grape", "lemon"],
+    "hard": ["elephant", "giraffe", "kangaroo", "zebra", "ostrich"]
+}
