@@ -227,3 +227,9 @@ def main():  # This is the main function of Hangman game, handling the game setu
         else:
             # Display an error message
             print("Invalid level choice.")
+
+
+# This if statement ensures the main() function is executed when the script is run directly
+if __name__ == "__main__":
+    # Starts the main game loop if this script is run directly
+    main()
