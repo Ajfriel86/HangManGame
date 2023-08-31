@@ -165,12 +165,65 @@ level_table = {
     "H": ("Hard", "7 Letter words")
 }
 
-# This function is for displaying a table for the level code, level type, and the word length of the level
 
-
-def display_level_table():
+def display_level_table():  # This function is for displaying a table for the level code, level type, and the word length of the level
     print("| Code | Level  | Description        |")
     print("|------|--------|--------------------|")
     for code, (level, description) in level_table.items():
         print(f"| {code}    | {level:<6} | {description:<18} |")
     print("|------|--------|--------------------|")
+
+
+def main():  # This is the main function of Hangman game, handling the game setup, level selection, gameplay, and whether the user wants to play again.
+    # This while loop is to keep the game running
+    while True:
+        # This is to display the available levels for the user to choose from
+        display_level_table()
+        # This is a prompt for the user to choose a level
+        level_choice = input(
+            "Choose a level code (E for Easy, M for Medium, H for Hard): ").upper()
+        # This checks if the chosen level selected is valid
+        if level_choice in level_table:
+            # This gets the chosen level from the level_table
+            chosen_level, _ = level_table[level_choice]
+            # This displays the selected by the user
+            print(f"You have chosen the '{chosen_level}' level.")
+
+            # This is an if/elif statement to determine the level selected by the user
+            # Check if the chosen level is easy
+            if level_choice == "E":
+                # Selects the list of words for the easy level
+                level_words = words["easy"]
+                # Sets the word length for the easy level
+                word_length = 3
+            # Checks if the chosen level is medium
+            elif level_choice == "M":
+                # Selects the list of words for the medium level
+                level_words = words["medium"]
+                # Sets the word length for the medium level
+                word_length = 5
+                # If the chosen level is not easy or medium, it's hard
+            else:
+                # Selects the list of words for the hard level
+                level_words = words["hard"]
+                # Sets the word length for the hard level
+                word_length = 7
+            # Display game instructions
+            print(
+                f"Instructions: You have 6 tries to guess a {word_length}-letter word.")
+
+            # Creates a Hangman game instance with the chosen level's words and word length
+            game = Hangman(level_words, word_length)
+            # Starts playing the game and gets whether the user wants to play again
+            play_again = game.play()
+
+            # Checks if the user doesn't want to play again
+            if not play_again:
+                # Displays a farewell message
+                print("Thanks for playing! Goodbye.")
+                # Exits the loop to end the game
+                break
+        # If the level selcted is incorrect
+        else:
+            # Display an error message
+            print("Invalid level choice.")
