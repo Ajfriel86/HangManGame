@@ -164,3 +164,13 @@ level_table = {
     "M": ("Medium", "5 Letter words"),
     "H": ("Hard", "7 Letter words")
 }
+
+# This function is for displaying a table for the level code, level type, and the word length of the level
+
+
+def display_level_table():
+    print("| Code | Level  | Description        |")
+    print("|------|--------|--------------------|")
+    for code, (level, description) in level_table.items():
+        print(f"| {code}    | {level:<6} | {description:<18} |")
+    print("|------|--------|--------------------|")
