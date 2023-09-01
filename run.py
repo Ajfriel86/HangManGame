@@ -261,6 +261,13 @@ def main():
             "Choose a level code (E for Easy, M for Medium, H for Hard): ").upper().strip()
         # This checks if the chosen level is valid
         if level_choice in level_table:
+
+            # Validate the level choice so the user does not input an incorrect value
+            if level_choice not in {'e', 'm', 'h'}:
+                print(
+                    "Invalid level choice. Please enter 'E' for Easy, 'M' for Medium, or 'H' \
+                        for Hard. No numbers, white space, or speicla charaters")
+                continue
             # This gets the chosen level from the level_table
             chosen_level, _ = level_table[level_choice]
             # This displays the selected by the user
