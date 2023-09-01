@@ -3,7 +3,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: url('/assets/images/scrabble.jpg');
+    background-image: url('../images/scrabble.jpg');
     background-position: right;
     background-repeat: repeat;
 }
