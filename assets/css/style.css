@@ -27,4 +27,5 @@ h1 {
 iframe {
     width: 800px;
     height: 500px;
+    padding-left: 3rem;
 }
