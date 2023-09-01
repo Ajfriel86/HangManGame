@@ -1,0 +1,30 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('/assets/images/scrabble.jpg');
+    background-position: right;
+    background-repeat: repeat;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20rem;
+}
+
+h1 {
+    background-color: rgba(0, 63, 120, 1);
+    color: white;
+    width: 20rem;
+    padding: 2rem;
+    border-radius: 15px;
+}
+
+iframe {
+    width: 800px;
+    height: 500px;
+}
