@@ -1,58 +1,45 @@
-"""
-Import the random module 
-for generating random words
-"""
+"""Import the random module for generating random words"""
 import random
-# This is the class that
-# defines the hangman game
 
 
+# This is the class that defines the hangman game
 class Hangman:
     """
-    # This is the definition of a new function, __init__ lets
-    # the class initialize the object's attributes
-    # self, is a reference to the instance of the object,
-    # while words & level are the values being passed when the
-    # instance is being created
+    This is the definition of a new function, __init__ lets
+    the class initialize the object's attributes
+    self, is a reference to the instance of the object,
+    while words & level are the values being passed when the
+    instance is being created
     """
 
     def __init__(self, words, level):
         """
-        This stores the list of words 
-        that are passed to the h
-        angman game (object)
+        This stores the list of words that are 
+        passed to the hangman game (object)
         """
         self.words = words
 
-        """
-        This stores the 
-        level selected
-        """
+        # This stores the level selected
         self.level = level
-        """
-        Choose a random word 
-        of the level-selected
-        """
+
+        # Choose a random word of the level-selected
         self.word = self.choose_word()
 
-        """" 
-        This creates an empty list, when the user guesses a letter it is added to the list
-        """
+        # This creates an empty list, when the user guesses a letter it is added to the list
         self.guessed_letters = []
-        """
-        Number of attempts the user has
-        """
+
+        # Number of attempts the user has
         self.attempts = 6
 
-    # This function selects a random word from the
-    # array list of preselected words depending
-    # on the level selected
     def choose_word(self):
-        """ 
-        This filters the words depending on 
-        their length and then matches 
-        that with the level selected
         """
+        This function selects a random word from the
+        array list of preselected words depending
+        on the level selected
+        """
+        # This filters the words depending on
+        # their length and then matches
+        # that with the level selected
         filtered_words = [
             word for word in self.words if len(word) == self.level]
 
@@ -62,24 +49,19 @@ class Hangman:
     # This function is for generating a string that represents the word
     # the user is trying to guess
     def display_word(self):
-        """
-        This initializes an empty string
-        """
+        """This function initializes an empty string"""
+
         display = ""
-        # This is a loop that iterates
-        # through each letter
+        # This is a loop that iterates through each letter
         for letter in self.word:
-            # This checks if the letter
-            # selected is correct
+            # This checks if the letter selected is correct
             if letter in self.guessed_letters:
                 # if it is correct it is displayed
                 display += letter
             else:
                 # If it is not correct the underscore remains
                 display += "_"
-        # This returns the word to be
-        # guessed with underscores if
-        # it is incorrect
+        # This returns the word to be guessed with underscores if it is incorrect
         return display
 
     def display_hangman(self):
@@ -89,57 +71,72 @@ class Hangman:
         """
 
         # This is the list of hangman stages
-        hang = ["""
+        hang = [
+            """
         
-    +---+
-    |   |
-        |
-        |
-        |
-        |
-    =========""", """
-    +---+
-    |   |
-    O   |
-        |
-        |
-        |
-    =========""", """
-    +---+
-    |   |
-    O   |
-    |   |
-        |
-        |
-    =========""", """
-    +---+
-    |   |
-    O   |
-    /|   |
-        |
-        |
-    =========""", """
-    +---+
-    |   |
-    O   |
-    /|\\  |
-        |
-        |
-    =========""", """
-    +---+
-    |   |
-    O   |
-    /|\\ |
-    /    |
-        |
-    =========""", """
-    +---+
-    |   |
-    O   |
-    /|\\  |
-    / \\ |
-        |
-    ========="""]
+            +---+
+            |   |
+                |
+                |
+                |
+                |
+            =========
+            """,
+            """
+            +---+
+            |   |
+            O   |
+                |
+                |
+                |
+            =========
+            """,
+            """
+            +---+
+            |   |
+            O   |
+            |   |
+                |
+                |
+            =========
+            """,
+            """
+            +---+
+            |   |
+            O   |
+            /|  |
+                |
+                |
+            =========
+            """,
+            """
+            +---+
+            |   |
+            O   |
+            /|\\|
+                |
+                |
+            =========
+            """,
+            """
+            +---+
+            |   |
+            O   |
+            /|\\|
+            /   |
+                |
+            =========
+            """,
+            """
+            +---+
+            |   |
+            O   |
+            /|\\|
+            / \\|
+                |
+            =========
+            """
+        ]
 
         # This displays/returns the hangman
         # figure based on the attempts taken
@@ -147,12 +144,11 @@ class Hangman:
 
         return hang[6 - self.attempts]
 
-    # This function is for the core logic of the game.
-    # It is responsible for the gameplay loop where
-    # the user guesses a letter from the hidden word
     def play(self):
         """
-        This is a text display
+        This function is for the core logic of the game.
+        It is responsible for the gameplay loop where
+        the user guesses a letter from the hidden word       
         """
         print("Welcome to Hangman!")
 
@@ -177,22 +173,18 @@ class Hangman:
                 print("Please enter a single letter.")
                 continue
 
-            # This if statement checks if a
-            # letter has been selected already
+            # This if statement checks if a letter has been selected already
             if guess in self.guessed_letters:
                 print("You already guessed that letter.")
                 continue
 
-            # If the letter selected meets the above
-            # criteria it is added to the variable 'guess'
+            # If the letter selected meets the above criteria it is added to the variable 'guess'
             self.guessed_letters.append(guess)
 
-            # If the guessed letter is in the
-            # hidden word - 'Correct!' - is displayed
+            # If the guessed letter is in the hidden word - 'Correct!' - is displayed
             if guess in self.word:
                 print("Correct!")
-                # Else - Worg - and the number of attempts
-                # left is displayed
+                # Else - Worg - and the number of attempts left is displayed
             else:
                 self.attempts -= 1
                 print(f"Wrong! You have {self.attempts} attempts left.")
@@ -224,8 +216,7 @@ class Hangman:
             return False
 
 
-# Each level contains different word
-# lengths and they are stored here
+# Each level contains different word lengths and they are stored here
 wordsDic = {
     "easy": ["cat", "dog", "bat", "hat", "pen"],
     "medium": ["apple", "banana", "cherry", "grape", "lemon"],
@@ -254,14 +245,13 @@ def display_level_table():
     print("|------|--------|--------------------|")
 
 
-# This is the main function of the Hangman game,
-# handling the game setup, level selection, gameplay,
-# and whether the user wants to play again.
 def main():
     """
-    This while loop is to keep the game running
+    This is the main function of the Hangman game,
+    handling the game setup, level selection, gameplay,
+    and whether the user wants to play again.
     """
-    while True:
+    while True:  # This while loop is to keep the game running
         # This is to display the available levels
         # for the user to choose from
         display_level_table()
