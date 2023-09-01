@@ -165,7 +165,7 @@ class Hangman:
             # This is a prompt for the user to input
             # a letter and store's the guessed letter
             # in the variable 'guess'
-            guess = input("Guess a letter: ").lower()
+            guess = input("Guess a letter: ").lower().strip()
 
             # This if statement is for ensuring only
             # 1 letter was entered
@@ -208,7 +208,8 @@ class Hangman:
             # game a prompt is displayed to ask
             # the user if they wish to play again
             # or leave the game
-        play_again = input("Do you want to play again? (y/n): ").lower()
+        play_again = input(
+            "Do you want to play again? (y/n): ").lower().strip()
         if play_again == 'y':
             return True
         else:
@@ -257,7 +258,7 @@ def main():
         display_level_table()
         # This is a prompt for the user to choose a level
         level_choice = input(
-            "Choose a level code (E for Easy, M for Medium, H for Hard): ").upper()
+            "Choose a level code (E for Easy, M for Medium, H for Hard): ").upper().strip()
         # This checks if the chosen level is valid
         if level_choice in level_table:
             # This gets the chosen level from the level_table
