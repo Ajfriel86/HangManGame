@@ -1,8 +1,8 @@
-"""Import the random module for generating random words"""
+"""Import the random & colorama module for generating random words and adding color"""
 import random
+from colorama import Fore
 
 
-# This is the class that defines the hangman game
 class Hangman:
     """
     This is the definition of a new function, __init__ lets
@@ -165,7 +165,7 @@ class Hangman:
             # This is a prompt for the user to input
             # a letter and store's the guessed letter
             # in the variable 'guess'
-            guess = input("Guess a letter: ").lower().strip()
+            guess = input("Guess a letter: ").strip().lower()
 
             # This if statement is for ensuring only
             # 1 letter was entered
@@ -175,7 +175,7 @@ class Hangman:
 
             # This if statement checks if a letter has been selected already
             if guess in self.guessed_letters:
-                print("You already guessed that letter.")
+                print(Fore.RED+"You already guessed that letter.")
                 continue
 
             # If the letter selected meets the above criteria it is added to the variable 'guess'
@@ -187,7 +187,8 @@ class Hangman:
                 # Else - Worg - and the number of attempts left is displayed
             else:
                 self.attempts -= 1
-                print(f"Wrong! You have {self.attempts} attempts left.")
+                print(
+                    Fore.RED+f"Wrong! You have {self.attempts} attempts left.")
 
             # This if statement checks if all underscores
             # (hidden letters) have been guessed correctly
@@ -201,7 +202,8 @@ class Hangman:
             # if they lost and the word they were trying
             # to guess
             if self.attempts == 0:
-                print("Sorry, you've run out of attempts. The word was:", self.word)
+                print(
+                    Fore.RED+"Sorry, you've run out of attempts. The word was:", self.word)
                 break
 
             # At the end of the
@@ -209,7 +211,7 @@ class Hangman:
             # the user if they wish to play again
             # or leave the game
         play_again = input(
-            "Do you want to play again? (y/n): ").lower().strip()
+            "Do you want to play again? (y/n): ").strip().lower()
         if play_again == 'y':
             return True
         else:
@@ -258,15 +260,14 @@ def main():
         display_level_table()
         # This is a prompt for the user to choose a level
         level_choice = input(
-            "Choose a level code (E for Easy, M for Medium, H for Hard): ").upper().strip()
+            "Choose a level code (E for Easy, M for Medium, H for Hard): ").strip().upper()
         # This checks if the chosen level is valid
         if level_choice in level_table:
 
             # Validate the level choice so the user does not input an incorrect value
             if level_choice not in {'e', 'm', 'h'}:
-                print(
-                    "Invalid level choice. Please enter 'E' for Easy, 'M' for Medium, or 'H' \
-                        for Hard. No numbers, white space, or speicla charaters")
+                print(Fore.RED + "Invalid level choice. Please enter 'E' for Easy,\
+                    'M' for Medium, or 'H' for Hard. No numbers, white space, or speicla charaters")
                 continue
             # This gets the chosen level from the level_table
             chosen_level, _ = level_table[level_choice]
@@ -310,7 +311,7 @@ def main():
             # If the level selected is incorrect
         else:
             # Display an error message
-            print("Invalid level choice.")
+            print(Fore.RED+"Invalid level choice.")
 
 
 # This if statement ensures the main()
