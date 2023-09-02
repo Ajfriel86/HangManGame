@@ -1,5 +1,11 @@
 """Import the random module for generating random words"""
 import random
+import os
+
+
+def clear_screen():
+    """Clears the terminal screen."""
+    os.system('cls' if os.name == 'nt' else 'clear')
 
 
 class Hangman:
@@ -17,16 +23,12 @@ class Hangman:
         passed to the hangman game (object)
         """
         self.words = words
-
         # This stores the level selected
         self.level = level
-
         # Choose a random word of the level-selected
         self.word = self.choose_word()
-
         # This creates an empty list, when the user guesses a letter it is added to the list
         self.guessed_letters = []
-
         # Number of attempts the user has
         self.attempts = 6
 
@@ -165,6 +167,8 @@ class Hangman:
         # the game keeps playing until all
         # conditions are met
         while True:
+            clear_screen()
+
             # Display the hangman figure
             print(self.display_hangman())
 
