@@ -2,7 +2,6 @@
 import random
 
 
-# This is the class that defines the hangman game
 class Hangman:
     """
     This is the definition of a new function, __init__ lets
@@ -266,6 +265,7 @@ def main():
     handling the game setup, level selection, gameplay,
     and whether the user wants to play again.
     """
+
     while True:  # This while loop is to keep the game running
         # This is to display the available levels
         # for the user to choose from
