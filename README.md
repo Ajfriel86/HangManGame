@@ -1,12 +1,11 @@
 # Reel Of Fortune
-[View The Deployed Site Here](https://ajfriel86.github.io/HangManGame/)
+[View The Deployed Site Here](https://hangman-gamer-fa003c400c0e.herokuapp.com/)
 
 ## About
 The concept of this application was to create an engaging game of hangman for the end-user using Python. 
 The game will display the instructions depending on the level selected in the game. Easy mode for 3-letter words, medium mode for 5-letter words, and hard mode for 7-letter words.  
 I opted to create the Python code using the programming paradigm, object-oriented programming, or O.O.P.
 
-![Responsive Image](./read_me_images/responsive.png)
 
 ---
 
@@ -47,8 +46,6 @@ I opted to create the Python code using the programming paradigm, object-oriente
 
 - ### Languages:
 
-    + [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML): The markup language used to create the website
-    + [CSS](https://developer.mozilla.org/en-US/docs/Web/css): The styling language used to style the website
     + [Python](https://developer.mozilla.org/en-US/docs/Glossary/Python): This was used for producing the game itself. 
 
 - ### Programming Paradigm
@@ -60,14 +57,6 @@ I opted to create the Python code using the programming paradigm, object-oriente
     + [GitHub](https://github.com/): This was used to host the source code of the website
     + [GitHub Pages](https://github.com/Ajfriel86/PilatesParadise/settings/pages): This was used to publish the files that were pushed to the repository
     + [VSCode](https://code.visualstudio.com/): This was the IDE used to develop the website
-    + [Chrome DevTools](https://developer.chrome.com/docs/devtools/open/): This was used to debug the website
-    + [Font Awesome](https://fontawesome.com/): This was used to create the icons used in the website
-    + [Google Fonts](https://fonts.google.com/): This was used to import the font 'Maven Pro' that is used throughout the site
-    + [Abobe Color-Wheel](https://color.adobe.com/create/color-wheel): This was used to create color swatches
-    + [W3C Validator](https://validator.w3.org/): This was used to validate HTML5 code for the website
-    + [W3C CSS validator](https://jigsaw.w3.org/css-validator/): This is used to validate CSS code for the website
-    + [Responsive Viewer](https://chrome.google.com/webstore/detail/responsive-viewer/inmopeiepgfljkpkidclfgbgbmfcennb): This was used to check the responsive design of the site on various devices
-    + [Jshint Validator](https://jshint.com/): This was used to validate the JavaScript code for this project
   
 
 ---
@@ -108,7 +97,7 @@ I opted to create the Python code using the programming paradigm, object-oriente
 
 ### Deployment to Git Hub Pages
 
-This website was constructed in VS Code and deployed on GitHub. The steps taken to deploy this website from its [GitHub Repository]() are as follows:
+This website was constructed in VS Code and deployed on Heroku. The steps taken to deploy this website from its [GitHub Repository]() are as follows:
 
 - Log into GitHub
 - Go to the list of repositories on the left-hand side of the screen
@@ -137,19 +126,9 @@ These steps can where found in the help documentation for GitHub here:
 
 ## Credits
 
-   - [W3 Schools - HTML Elements](https://www.w3schools.com/html/html_elements.asp): This was used to understand the html tag is for
-   - [W3 Schools - Doctype](https://www.w3schools.com/tags/tag_doctype.asp): This was used to understand what the Doctype tag is for
-   - [Geeks for Geeks - http-equivx-ua] (https://www.geeksforgeeks.org/what-does-meta-http-equivx-ua-compatible-contentieedge-do/): This was used to understand the porperty http-equivx-ua-compatible
-   - [HubSpot - utf-8](https://blog.hubspot.com/website/what-is-utf-8): THis was used to understand what utf-8 is
-   - [Mozilla Viewport Meta Tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag): This was used to understand the Viewport in better detail
-   - [W3 Schools - Meta Tags](https://w3schools.com/tags/tag_meta.asp): This was used to understand the meta tags in greater details 
-   - [Ahrefs - Keywords](https://ahrefs.com/blog/meta-keywords/): This was used to understand keywords and SEO 
-   - [Kevin Powell](https://www.youtube.com/watch?v=8QKOaTYvYUA&t=26s): This was used to create a responsive nav nar with no JS
-   - [Mozilla - Header](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/header): This was used to understand headers in more detail
-   - [Mozilla - Nav-tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nav): This was used to understand nav tags in more detail
-   - [Mozzila - HTML Markup](https://www.w3.org/TR/2012/WD-html-markup-20120329/ul.html): This was used to understand HTML markup in more detail
-   - [W3 Schools - Anchor Tags](https://www.w3schools.com/tags/tag_a.asp): THis was used to understand anchor tags in more detail
-   - [Cloning a repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository): This was used to understand how to clone a repository
-   - [How to make a slot-machine with HTML, CSS and Javascript](https://www.youtube.com/watch?v=boI2B4Gpp34): This helped me in understanding how the game would work in JavaScript
-   - [ASMR Programming - Slot Game Coding With JavaScript - No Talking](https://www.youtube.com/watch?v=LCyzgXwWGDQ): This was another great resource for getting the game off the ground and understanding some of the concepts needed to build it
+   - [CPPSecrets](https://cppsecrets.com/users/5617971101051071011161151049711410997484852494964103109971051084699111109/Hangman-Game-using-Python.php): This site was the inspiration for creating this hangman game.
+   - [Simple-Terminal-Window](https://pypi.org/project/simple-term-menu/): This creates simple menus for interactive command line programs
+   - [Random](https://docs.python.org/3/library/random.html): This was used to help select a random word from the word dictionary file
+   - [Gitnux](https://blog.gitnux.com/code/python-clear-console/): This was used to help clear the terminal window
+   - [Iuliia Konovalova](https://github.com/IuliiaKonovalova): I would like to give credit to my mentor for her guidance and inspiration while completing this project. Iuliia helped to point me in the direction that I needed to complete this project
 
