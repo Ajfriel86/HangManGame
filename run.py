@@ -133,7 +133,7 @@ class Hangman:
             # If the guessed letter is in the hidden word
             # - 'Correct!' - is displayed
             if guess in self.word:
-                print("Correct!")
+                print("Correct! You got a letter!!")
                 # Else - Worg - and the number of attempts
                 # left is displayed
             else:
