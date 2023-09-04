@@ -117,13 +117,13 @@ class Hangman:
             # This if statement is for ensuring only
             # 1 letter was entered
             if len(guess) != 1 or not guess.isalpha():
-                print("Please enter a single letter.")
+                print("Please enter a single letter only and no numbers.")
                 continue
 
             # This if statement checks if a letter has
             # been selected already
             if guess in self.guessed_letters:
-                print("You already guessed that letter.")
+                print("You already guessed that letter. Try another one.")
                 continue
 
             # If the letter selected meets the above criteria
@@ -144,7 +144,8 @@ class Hangman:
             # (hidden letters) have been guessed correctly
             # and if so, a congrats message is displayed
             if "_" not in self.display_word():
-                print("Congratulations, you've guessed the word!")
+                print("Congratulations, you've guessed the word! \
+                    The word was:", self.word)
                 break
 
             # This if statement checks if the user
@@ -182,7 +183,7 @@ def main():
         display_level_table()
         # This is a prompt for the user to choose a level
         level_choice = input(
-            "Choose a level code (E for Easy, M for Medium, H for Hard): "
+            "Choose a level (E for Easy, M for Medium, H for Hard): "
         ).upper().strip()
         # This checks if the chosen level is valid
         if level_choice in level_table:
@@ -190,10 +191,10 @@ def main():
             # input an incorrect value
             if level_choice not in {'E', 'M', 'H'}:
                 print(
-                    "Invalid level choice. Please enter 'E' \
+                    "Invalid choice. Please enter 'E' \
                         for Easy, 'M' for Medium, or 'H' \
                         for Hard. No numbers, white space, \
-                            or speicla charaters")
+                            or speical charaters")
                 continue
             # This gets the chosen level from the level_table
             chosen_level, _ = level_table[level_choice]
@@ -236,9 +237,6 @@ def main():
                 # Exits the loop to end the game
                 break
             # If the level selected is incorrect
-        else:
-            # Display an error message
-            print("Invalid level choice.")
 
 
 # This if statement ensures the main()
