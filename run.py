@@ -1,6 +1,18 @@
-"""Import the random module for generating random words"""
-import random
+"""
+Importing modules & files:
+OS for clearing the screen 
+Random for generating random words
+Colorama to add color to the text
+Display files for hangman figure
+Words files for the words for each level
+Level files for the level structure 
+Level files for table displaying level structure
+"""
 import os
+import random
+from display import display_hangman
+from words import wordsDic
+from level import level_table, display_level_table
 
 
 def clear_screen():
@@ -75,86 +87,6 @@ class Hangman:
         # This returns the word to be guessed with underscores if it is incorrect
         return display
 
-    def display_hangman(self):
-        """
-        This function displays the
-        various stages of the hangman game
-        """
-
-        # This is the list of hangman stages
-        hang = [
-            """
-        
-            +---+
-            |   |
-                |
-                |
-                |
-                |
-            =========
-            """,
-            """
-            +---+
-            |   |
-            O   |
-                |
-                |
-                |
-            =========
-            """,
-            """
-            +---+
-            |   |
-            O   |
-            |   |
-                |
-                |
-            =========
-            """,
-            """
-            +---+
-            |   |
-            O   |
-           /|   |
-                |
-                |
-            =========
-            """,
-            """
-            +---+
-            |   |
-            O   |
-           /|\\ |
-                |
-                |
-            =========
-            """,
-            """
-            +---+
-            |   |
-            O   |
-           /|\\ |
-           /    |
-                |
-            =========
-            """,
-            """
-            +--+
-            |   |
-            O   |
-           /|\\ |
-           / \\ |
-                |
-            =========
-            """
-        ]
-
-        # This displays/returns the hangman
-        # figure based on the attempts taken
-        # by the user
-
-        return hang[6 - self.attempts]
-
     def play(self):
         """
         This function is for the core logic of the game.
@@ -168,17 +100,13 @@ class Hangman:
         # conditions are met
         while True:
             clear_screen()
-
             # Display the hangman figure
-            print(self.display_hangman())
-
+            print(display_hangman(self.attempts))
             # Display the letters when guessed correctly
             print("\n" + self.display_word())
-
             # This calls the function to display the
             # guessed letters by a user and prints it to screen
             print(self.display_guessed_letters())
-
             # This is a prompt for the user to input
             # a letter and store's the guessed letter
             # in the variable 'guess'
@@ -232,35 +160,6 @@ class Hangman:
         else:
             print("Thank you for playing Hangman!")
             return False
-
-
-# Each level contains different word lengths and they are stored here
-wordsDic = {
-    "easy": ["cat", "dog", "bat", "hat", "pen"],
-    "medium": ["apple", "banana", "cherry", "grape", "lemon"],
-    "hard": ["elephant", "giraffe", "kangaroo", "zebra", "ostrich"]
-}
-
-
-# Each level is referred to by its first letter and this
-# corresponds to the level and word length for that level
-level_table = {
-    "E": ("Easy", "3 Letter words"),
-    "M": ("Medium", "5 Letter words"),
-    "H": ("Hard", "7 Letter words")
-}
-
-
-def display_level_table():
-    """
-    This function is for displaying a table for the level code,
-    level type, and the word length of the level
-    """
-    print("| Code | Level  | Description        |")
-    print("|------|--------|--------------------|")
-    for code, (level, description) in level_table.items():
-        print(f"| {code}    | {level:<6} | {description:<18} |")
-    print("|------|--------|--------------------|")
 
 
 def main():
