@@ -84,11 +84,6 @@ I opted to create the Python code using the programming paradigm, object-oriente
 
 
 ### Validation
-#### HTML:
- - Landing Page:
-
-#### CSS:
--
 #### Python:
 
 ---
@@ -97,7 +92,7 @@ I opted to create the Python code using the programming paradigm, object-oriente
 
 ### Deployment to Git Hub Pages
 
-This website was constructed in VS Code and deployed on Heroku. The steps taken to deploy this website from its [GitHub Repository]() are as follows:
+This website was constructed in VS Code and deployed on Heroku. The steps taken to deploy this website from its [GitHub Repository](https://github.com/Ajfriel86/HangManGame) are as follows:
 
 - Log into GitHub
 - Go to the list of repositories on the left-hand side of the screen
