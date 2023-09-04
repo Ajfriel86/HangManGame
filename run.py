@@ -1,11 +1,11 @@
 """
 Importing modules & files:
-OS for clearing the screen 
+OS for clearing the screen
 Random for generating random words
 Colorama to add color to the text
 Display files for hangman figure
 Words files for the words for each level
-Level files for the level structure 
+Level files for the level structure
 Level files for table displaying level structure
 """
 import os
@@ -31,7 +31,7 @@ class Hangman:
 
     def __init__(self, words, level):
         """
-        This stores the list of words that are 
+        This stores the list of words that are
         passed to the hangman game (object)
         """
         self.words = words
@@ -39,7 +39,8 @@ class Hangman:
         self.level = level
         # Choose a random word of the level-selected
         self.word = self.choose_word()
-        # This creates an empty list, when the user guesses a letter it is added to the list
+        # This creates an empty list, when the user
+        # guesses a letter it is added to the list
         self.guessed_letters = []
         # Number of attempts the user has
         self.attempts = 6
@@ -70,7 +71,7 @@ class Hangman:
 
     def display_word(self):
         """
-        This function is for generating a 
+        This function is for generating a
         string that represents the word
         the user is trying to guess
         """
@@ -84,14 +85,15 @@ class Hangman:
             else:
                 # If it is not correct the underscore remains
                 display += "_"
-        # This returns the word to be guessed with underscores if it is incorrect
+        # This returns the word to be guessed with
+        # underscores if it is incorrect
         return display
 
     def play(self):
         """
         This function is for the core logic of the game.
         It is responsible for the gameplay loop where
-        the user guesses a letter from the hidden word       
+        the user guesses a letter from the hidden word
         """
         print("Welcome to Hangman!")
 
@@ -118,18 +120,22 @@ class Hangman:
                 print("Please enter a single letter.")
                 continue
 
-            # This if statement checks if a letter has been selected already
+            # This if statement checks if a letter has
+            # been selected already
             if guess in self.guessed_letters:
                 print("You already guessed that letter.")
                 continue
 
-            # If the letter selected meets the above criteria it is added to the variable 'guess'
+            # If the letter selected meets the above criteria
+            # it is added to the variable 'guess'
             self.guessed_letters.append(guess)
 
-            # If the guessed letter is in the hidden word - 'Correct!' - is displayed
+            # If the guessed letter is in the hidden word
+            # - 'Correct!' - is displayed
             if guess in self.word:
                 print("Correct!")
-                # Else - Worg - and the number of attempts left is displayed
+                # Else - Worg - and the number of attempts
+                # left is displayed
             else:
                 self.attempts -= 1
                 print(f"Wrong! You have {self.attempts} attempts left.")
@@ -146,7 +152,8 @@ class Hangman:
             # if they lost and the word they were trying
             # to guess
             if self.attempts == 0:
-                print("Sorry, you've run out of attempts. The word was:", self.word)
+                print("Sorry, you've run out of attempts.\
+                    The word was:", self.word)
                 break
 
             # At the end of the
@@ -175,14 +182,18 @@ def main():
         display_level_table()
         # This is a prompt for the user to choose a level
         level_choice = input(
-            "Choose a level code (E for Easy, M for Medium, H for Hard): ").upper().strip()
+            "Choose a level code (E for Easy, M for Medium, H for Hard): "
+        ).upper().strip()
         # This checks if the chosen level is valid
         if level_choice in level_table:
-            # Validate the level choice so the user does not input an incorrect value
+            # Validate the level choice so the user does not
+            # input an incorrect value
             if level_choice not in {'E', 'M', 'H'}:
                 print(
-                    "Invalid level choice. Please enter 'E' for Easy, 'M' for Medium, or 'H' \
-                        for Hard. No numbers, white space, or speicla charaters")
+                    "Invalid level choice. Please enter 'E' \
+                        for Easy, 'M' for Medium, or 'H' \
+                        for Hard. No numbers, white space, \
+                            or speicla charaters")
                 continue
             # This gets the chosen level from the level_table
             chosen_level, _ = level_table[level_choice]
@@ -210,7 +221,8 @@ def main():
                 word_length = 7
             # Display game instructions
             print(
-                f"Instructions: You have 6 tries to guess a {word_length}-letter word.")
+                f"Instructions: You have 6 tries to guess a \
+                    {word_length}-letter word.")
             # Creates a Hangman game instance with
             # the chosen level's words and word length
             game = Hangman(level_words, word_length)
