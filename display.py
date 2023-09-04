@@ -43,7 +43,7 @@ def display_hangman(attempts):
         +---+
         |   |
         O   |
-        /|  |
+       /|   |
             |
             |
         =========
@@ -52,7 +52,7 @@ def display_hangman(attempts):
         +---+
         |   |
         O   |
-        /|\\ |
+       /|\\ |
             |
             |
         =========
@@ -61,8 +61,8 @@ def display_hangman(attempts):
         +---+
         |   |
         O   |
-        /|\\ |
-        /   |
+       /|\\ |
+       /    |
             |
         =========
         """,
@@ -70,8 +70,8 @@ def display_hangman(attempts):
         +--+
         |   |
         O   |
-        /|\\ |
-        / \\ |
+       /|\\ |
+       / \\ |
             |
         =========
         """

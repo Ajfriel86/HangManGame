@@ -172,14 +172,23 @@ class Hangman:
             # game a prompt is displayed to ask
             # the user if they wish to play again
             # or leave the game
-        play_again = input(Fore.BLUE +
-                           "Do you want to play again? (y/n): ").lower().strip()
+
+        play_again = input(
+            Fore.BLUE + "Do you want to play again? (y/n): "
+        ).lower().strip()
         print(Style.RESET_ALL)
-        if play_again == 'y':
-            return True
-        else:
-            print("Thank you for playing Hangman!")
-            return False
+        play_game_menu = True
+        while play_game_menu:
+            if play_again == 'y':
+                play_game_menu = False
+                return True
+            elif play_again == 'n':
+                play_game_menu = False
+                print("Thank you for playing Hangman!")
+                return False
+            else:
+                print(Fore.RED + "Invalid input, please just select y/n.")
+                print(Style.RESET_ALL)
 
 
 def main():
