@@ -13,7 +13,6 @@ def display_hangman(attempts):
     # This is the list of hangman stages
     hang = [
         """
-    
         +---+
         |   |
             |
