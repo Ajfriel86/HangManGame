@@ -10,6 +10,7 @@ Level files for table displaying level structure
 """
 import os
 import random
+from colorama import Fore, Back, Style
 from display import display_hangman
 from words import wordsDic
 from level import level_table, display_level_table
@@ -95,35 +96,40 @@ class Hangman:
         It is responsible for the gameplay loop where
         the user guesses a letter from the hidden word
         """
-        print("Welcome to Hangman!")
-
+        print(Back.GREEN + "Welcome to Hangman!")
+        print(Style.RESET_ALL)
         # This is the gameplay loop that ensures
         # the game keeps playing until all
         # conditions are met
         while True:
             clear_screen()
             # Display the hangman figure
-            print(display_hangman(self.attempts))
+            print(Fore.YELLOW + display_hangman(self.attempts))
+            print(Style.RESET_ALL)
             # Display the letters when guessed correctly
-            print("\n" + self.display_word())
+            print(Fore.GREEN + "\n" + self.display_word())
+            print(Style.RESET_ALL)
             # This calls the function to display the
             # guessed letters by a user and prints it to screen
-            print(self.display_guessed_letters())
+            print(Fore.BLUE + self.display_guessed_letters())
+            print(Style.RESET_ALL)
             # This is a prompt for the user to input
             # a letter and store's the guessed letter
             # in the variable 'guess'
-            guess = input("Guess a letter: ").lower().strip()
-
+            guess = input(Fore.GREEN + "Guess a letter: ").lower().strip()
+            print(Style.RESET_ALL)
             # This if statement is for ensuring only
             # 1 letter was entered
             if len(guess) != 1 or not guess.isalpha():
-                print("Please enter a single letter only and no numbers.")
+                print(Fore.RED + "Please enter a single letter only and no numbers.")
+                print(Style.RESET_ALL)
                 continue
 
             # This if statement checks if a letter has
             # been selected already
             if guess in self.guessed_letters:
-                print("You already guessed that letter. Try another one.")
+                print(Fore.RED + "You already guessed that letter. Try another one.")
+                print(Style.RESET_ALL)
                 continue
 
             # If the letter selected meets the above criteria
@@ -133,19 +139,23 @@ class Hangman:
             # If the guessed letter is in the hidden word
             # - 'Correct!' - is displayed
             if guess in self.word:
-                print("Correct! You got a letter!!")
+                print(Fore.GREEN + "Correct! You got a letter!!")
+                print(Style.RESET_ALL)
                 # Else - Worg - and the number of attempts
                 # left is displayed
             else:
                 self.attempts -= 1
-                print(f"Wrong! You have {self.attempts} attempts left.")
+                print(
+                    Fore.RED + f"Wrong! You have {self.attempts} attempts left.")
+                print(Style.RESET_ALL)
 
             # This if statement checks if all underscores
             # (hidden letters) have been guessed correctly
             # and if so, a congrats message is displayed
             if "_" not in self.display_word():
-                print("Congratulations, you've guessed the word! \
+                print(Fore.GREEN + "Congratulations, you've guessed the word! \
                     The word was:", self.word)
+                print(Style.RESET_ALL)
                 break
 
             # This if statement checks if the user
@@ -153,16 +163,18 @@ class Hangman:
             # if they lost and the word they were trying
             # to guess
             if self.attempts == 0:
-                print("Sorry, you've run out of attempts.\
+                print(Fore.RED + "Sorry, you've run out of attempts.\
                     The word was:", self.word)
+                print(Style.RESET_ALL)
                 break
 
             # At the end of the
             # game a prompt is displayed to ask
             # the user if they wish to play again
             # or leave the game
-        play_again = input(
-            "Do you want to play again? (y/n): ").lower().strip()
+        play_again = input(Fore.BLUE +
+                           "Do you want to play again? (y/n): ").lower().strip()
+        print(Style.RESET_ALL)
         if play_again == 'y':
             return True
         else:
@@ -190,11 +202,12 @@ def main():
             # Validate the level choice so the user does not
             # input an incorrect value
             if level_choice not in {'E', 'M', 'H'}:
-                print(
-                    "Invalid choice. Please enter 'E' \
+                print(Fore.RED +
+                      "Invalid choice. Please enter 'E' \
                         for Easy, 'M' for Medium, or 'H' \
                         for Hard. No numbers, white space, \
                             or speical charaters")
+                print(Style.RESET_ALL)
                 continue
             # This gets the chosen level from the level_table
             chosen_level, _ = level_table[level_choice]
