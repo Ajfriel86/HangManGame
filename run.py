@@ -127,7 +127,7 @@ class Hangman:
                 print(
                     f"""
                     {Fore.RED}
-                    Wrong! You have {self.attempts} attempts left."
+                    Wrong! You have {self.attempts} attempts left.
                     """ + Style.RESET_ALL
                 )
             if "_" not in self.display_word():
