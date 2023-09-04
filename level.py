@@ -1,6 +1,6 @@
 """
 This file conatins the level structure
-And the table that displays the levels and word count 
+And the table that displays the levels and word count
 for each level
 It is then imported into run.py
 """
