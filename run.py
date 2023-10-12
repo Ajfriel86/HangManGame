@@ -44,7 +44,7 @@ class Hangman:
         self.level = level
         self.word = self.choose_word()
         self.guessed_letters = []
-        self.attempts = 6
+        self.attempts = 7
 
     def choose_word(self):
         """
@@ -99,13 +99,13 @@ class Hangman:
                 {Fore.GREEN} Guess a letter: 
                 """
             ).lower().strip()
-            clear_screen()
             if len(guess) != 1 or not guess.isalpha():
                 print(
                     f"""
                     {Fore.RED}Please enter a single letter only and no numbers."
                     """ + Style.RESET_ALL
                 )
+                clear_screen()
                 continue
             if guess in self.guessed_letters:
                 print(
