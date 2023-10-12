@@ -52,7 +52,7 @@ def display_hangman(attempts):
         +---+
         |   |
         O   |
-       /|\\ |
+       /|\\  |
             |
             |
         =========
@@ -61,17 +61,17 @@ def display_hangman(attempts):
         +---+
         |   |
         O   |
-       /|\\ |
+       /|\\  |
        /    |
             |
         =========
         """,
         """
-        +--+
+        +---+
         |   |
         O   |
-       /|\\ |
-       / \\ |
+       /|\\  |
+       / \\  |
             |
         =========
         """
@@ -79,4 +79,4 @@ def display_hangman(attempts):
 
     # This displays/returns the hangman
     # figure based on the attempts taken
-    return hang[6 - attempts]
+    return hang[7 - attempts]
