@@ -21,5 +21,6 @@ def display_level_table():
     print(f"{Fore.GREEN}| Code | Level  | Description        |")
     print("|------|--------|--------------------|")
     for code, (level, description) in level_table.items():
-        print(f"|{Fore.GREEN}{code}     | {level:<6} | {description:<18} |")
+        print(
+            f"|{Fore.GREEN}{code}     | {level:<6} | {description:<18} |")
     print(f"{Fore.GREEN}|------|--------|--------------------|")
