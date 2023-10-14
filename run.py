@@ -10,6 +10,7 @@ Level files for table displaying level structure
 """
 import os
 import random
+from time import sleep
 from colorama import Fore, Back, Style
 from display import display_hangman
 from words import wordsDic
@@ -91,7 +92,7 @@ class Hangman:
         print(Back.GREEN + "Welcome to Hangman!")
         print(Style.RESET_ALL)
         while True:
-            print(Fore.YELLOW + display_hangman(self.attempts) + Style.RESET_ALL)
+            print(Fore.GREEN + display_hangman(self.attempts) + Style.RESET_ALL)
             print(Fore.GREEN + "\n" + self.display_word() + Style.RESET_ALL)
             print(Fore.BLUE + self.display_guessed_letters() + Style.RESET_ALL)
             guess = input(
@@ -102,9 +103,11 @@ class Hangman:
             if len(guess) != 1 or not guess.isalpha():
                 print(
                     f"""
-                    {Fore.RED}Please enter a single letter only and no numbers."
+                    {Fore.RED}Please enter a single letter only and 
+                    no numbers or special characters.
                     """ + Style.RESET_ALL
                 )
+                sleep(2)
                 clear_screen()
                 continue
             if guess in self.guessed_letters:
@@ -114,6 +117,7 @@ class Hangman:
                     Try another one.
                     """ + Style.RESET_ALL
                 )
+                sleep(2)
                 continue
             self.guessed_letters.append(guess)
             if guess in self.word:
@@ -148,7 +152,7 @@ class Hangman:
                 break
         play_again = input(
             f"""
-            {Fore.BLUE}Do you want to play again? (y/n): "
+            {Fore.GREEN}Do you want to play again? (y/n): "
             """ + Style.RESET_ALL
         ).lower().strip()
         play_game_menu = True
@@ -158,18 +162,18 @@ class Hangman:
                 return True
             elif play_again == 'n':
                 play_game_menu = False
-                print("Thank you for playing Hangman!")
+                print(f"{Fore.GREEN}Thank you for playing Hangman!")
                 return False
             else:
                 print(
                     f"""
                     {Fore.RED}Invalid input, please just select y/n.
                     """ + Style.RESET_ALL
-                )
+                ).strip()
                 play_again = input(
                     f"""
-                    {Fore.BLUE}Do you want to play again? (y/n):
-                    """ + Style.RESET_ALL
+            {Fore.GREEN}Do you want to play again? (y/n): "
+            """ + Style.RESET_ALL
                 ).lower().strip()
 
 
@@ -183,25 +187,22 @@ def main():
     """
 
     while True:
-        display_level_table()
-        level_choice = input(
-            "Choose a level (E for Easy, M for Medium, H for Hard): "
-        ).upper().strip()
-        if level_choice in level_table:
-            if level_choice not in {'E', 'M', 'H'}:
-                print(
-                    f"""
-                    {Fore.RED}
-                    Invalid choice.
-                    Please enter 'E' for Easy,
-                    'M' for Medium, or 
-                    'H' for Hard. 
-                    No numbers, white space, or speical charaters.
-                    """ + Style.RESET_ALL
-                )
-                continue
+        sleep(2)
+        clear_screen()
+        try:
+            display_level_table()
+            level_choice = input(
+                "Choose a level (E for Easy, M for Medium, H for Hard): "
+            ).upper().strip()
+
+            if level_choice not in level_table:
+                raise ValueError(
+                    "Invalid selection. Please only select "
+                    "'E' for Easy, 'M' for Medium, or 'H' for Hard.")
+
             chosen_level, _ = level_table[level_choice]
             print(f"You have chosen the '{chosen_level}' level.")
+
             if level_choice == "E":
                 level_words = wordsDic["easy"]
                 word_length = 3
@@ -211,17 +212,24 @@ def main():
             else:
                 level_words = wordsDic["hard"]
                 word_length = 7
+            clear_screen()
+
             print(
                 f"""
-                Instructions: You have 6 tries to guess a
-                {word_length}-letter word.
-                """
+                    Instructions: You have 6 tries to guess a
+                    {word_length}-letter word.
+                    """
             )
+
             game = Hangman(level_words, word_length)
             play_again = game.play()
+
             if not play_again:
                 print("Thanks for playing! Goodbye.")
                 break
+
+        except ValueError as e:
+            print(f"{Fore.RED}{e}{Style.RESET_ALL}")
 
 
 if __name__ == "__main__":
