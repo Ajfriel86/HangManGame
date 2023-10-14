@@ -95,61 +95,63 @@ class Hangman:
             print(Fore.GREEN + display_hangman(self.attempts) + Style.RESET_ALL)
             print(Fore.GREEN + "\n" + self.display_word() + Style.RESET_ALL)
             print(Fore.BLUE + self.display_guessed_letters() + Style.RESET_ALL)
-            guess = input(
-                f"""
-                {Fore.GREEN} Guess a letter: 
-                """
-            ).lower().strip()
-            if len(guess) != 1 or not guess.isalpha():
-                print(
+            try:
+                guess = input(
                     f"""
-                    {Fore.RED}Please enter a single letter only and 
-                    no numbers or special characters.
-                    """ + Style.RESET_ALL
-                )
+                    {Fore.GREEN}Guess a letter: 
+                    """
+                ).lower().strip()
+                if len(guess) != 1 or not guess.isalpha():
+                    raise ValueError(
+                        f"""
+                        {Fore.RED}Please enter a single letter only and 
+                        no numbers or special characters.
+                        """ + Style.RESET_ALL
+                    )
+                if guess in self.guessed_letters:
+                    raise ValueError(
+                        f"""
+                        {Fore.RED}You already guessed that letter. 
+                        Try another one.
+                        """ + Style.RESET_ALL
+                    )
+                self.guessed_letters.append(guess)
+                if guess in self.word:
+                    print(
+                        f"""
+                        {Fore.GREEN}Correct! You got a letter!!
+                        """ + Style.RESET_ALL
+                    )
+                else:
+                    self.attempts -= 1
+                    print(
+                        f"""
+                        {Fore.RED}
+                        Wrong! You have {self.attempts} attempts left.
+                        """ + Style.RESET_ALL
+                    )
+                if "_" not in self.display_word():
+                    print(
+                        f"""
+                        {Fore.GREEN}Congratulations, you've guessed the word!
+                        The word was :
+                        """ + self.word + Style.RESET_ALL
+                    )
+                    break
+                if self.attempts == 0:
+                    print(
+                        f"""
+                        {Fore.RED}Sorry, you've run out of attempts.
+                        The word was:
+                        """ + self.word + Style.RESET_ALL
+                    )
+                    break
+            except ValueError as e:
+                print(f"{Fore.RED}{e}{Style.RESET_ALL}")
                 sleep(2)
                 clear_screen()
                 continue
-            if guess in self.guessed_letters:
-                print(
-                    f"""
-                    {Fore.RED}You already guessed that letter. 
-                    Try another one.
-                    """ + Style.RESET_ALL
-                )
-                sleep(2)
-                continue
-            self.guessed_letters.append(guess)
-            if guess in self.word:
-                print(
-                    f"""
-                    {Fore.GREEN}Correct! You got a letter!!
-                    """ + Style.RESET_ALL
-                )
-            else:
-                self.attempts -= 1
-                print(
-                    f"""
-                    {Fore.RED}
-                    Wrong! You have {self.attempts} attempts left.
-                    """ + Style.RESET_ALL
-                )
-            if "_" not in self.display_word():
-                print(
-                    f"""
-                    {Fore.GREEN}Congratulations, you've guessed the word!
-                    The word was :
-                    """ + self.word + Style.RESET_ALL
-                )
-                break
-            if self.attempts == 0:
-                print(
-                    f"""
-                    {Fore.RED}Sorry, you've run out of attempts.
-                    The word was:
-                    """ + self.word + Style.RESET_ALL
-                )
-                break
+
         play_again = input(
             f"""
             {Fore.GREEN}Do you want to play again? (y/n): "
