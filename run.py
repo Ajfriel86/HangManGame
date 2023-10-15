@@ -11,7 +11,7 @@ Level files for table displaying level structure
 import os
 import random
 from time import sleep
-from colorama import Fore, Back, Style
+from colorama import Fore, Style
 from display import display_hangman
 from words import wordsDic
 from level import level_table, display_level_table
@@ -89,29 +89,32 @@ class Hangman:
         It is responsible for the gameplay loop where
         the user guesses a letter from the hidden word
         """
-        print(Back.GREEN + "Welcome to Hangman!")
+        print(Fore.GREEN + "Welcome to Hangman!")
         print(Style.RESET_ALL)
         while True:
-            print(Fore.GREEN + display_hangman(self.attempts) + Style.RESET_ALL)
-            print(Fore.GREEN + "\n" + self.display_word() + Style.RESET_ALL)
-            print(Fore.BLUE + self.display_guessed_letters() + Style.RESET_ALL)
+            print(Fore.GREEN +
+                  display_hangman(self.attempts) + Style.RESET_ALL)
+            print(Fore.GREEN + "\n" +
+                  self.display_word() + Style.RESET_ALL)
+            print(Fore.BLUE +
+                  self.display_guessed_letters() + Style.RESET_ALL)
             try:
                 guess = input(
                     f"""
-                    {Fore.GREEN}\n Guess a letter: 
+                    {Fore.GREEN}Guess a letter: 
                     """
                 ).lower().strip()
                 if len(guess) != 1 or not guess.isalpha():
                     raise ValueError(
                         f"""
-                        {Fore.RED}\n Please enter a single letter only and 
+                        {Fore.RED}Please enter a single letter only and 
                         no numbers or special characters.
                         """ + Style.RESET_ALL
                     )
                 if guess in self.guessed_letters:
                     raise ValueError(
                         f"""
-                        {Fore.RED}\n You already guessed that letter. 
+                        {Fore.RED}You already guessed that letter. 
                         Try another one.
                         """ + Style.RESET_ALL
                     )
@@ -119,7 +122,7 @@ class Hangman:
                 if guess in self.word:
                     print(
                         f"""
-                        {Fore.GREEN}\n Correct! You got a letter!!
+                        {Fore.GREEN}Correct! You got a letter!!
                         """ + Style.RESET_ALL
                     )
                 else:
@@ -127,24 +130,28 @@ class Hangman:
                     print(
                         f"""
                         {Fore.RED}
-                        \n Wrong! You have {self.attempts} attempts left.
+                        Wrong! You have {self.attempts} attempts left.
                         """ + Style.RESET_ALL
                     )
                 if "_" not in self.display_word():
                     print(
                         f"""
-                        {Fore.GREEN}\n Congratulations, you've guessed the word!
+                        {Fore.GREEN}Congratulations, you've guessed the word!
                         The word was :
                         """ + self.word + Style.RESET_ALL
                     )
+                    sleep(2)
+                    clear_screen()
                     break
                 if self.attempts == 0:
                     print(
                         f"""
-                        {Fore.RED}\n Sorry, you've run out of attempts.
+                        {Fore.RED}Sorry, you've run out of attempts.
                         The word was:
                         """ + self.word + Style.RESET_ALL
                     )
+                    sleep(2)
+                    clear_screen()
                     break
             except ValueError as e:
                 print(f"{Fore.RED}{e}{Style.RESET_ALL}")
@@ -155,7 +162,7 @@ class Hangman:
 
         play_again = input(
             f"""
-            {Fore.GREEN}\n Do you want to play again? (y/n): "
+            {Fore.GREEN}Do you want to play again? (y/n): "
             """ + Style.RESET_ALL
         ).lower().strip()
         play_game_menu = True
@@ -165,17 +172,18 @@ class Hangman:
                 return True
             elif play_again == 'n':
                 play_game_menu = False
-                print(f"{Fore.GREEN}\n Thank you for playing Hangman!")
+                print(
+                    f"{Fore.GREEN}Thank you for playing Hangman!")
                 return False
             else:
                 print(
                     f"""
-                    {Fore.RED}\n Invalid input, please just select y/n.
+                    {Fore.RED}Invalid input, please just select y/n.
                     """ + Style.RESET_ALL
                 ).strip()
                 play_again = input(
                     f"""
-            {Fore.GREEN}\n Do you want to play again? (y/n): "
+            {Fore.GREEN}Do you want to play again? (y/n): "
             """ + Style.RESET_ALL
                 ).lower().strip()
 
@@ -195,12 +203,12 @@ def main():
         try:
             display_level_table()
             level_choice = input(
-                "\n Choose a level (E for Easy, M for Medium, H for Hard): "
+                "Choose a level (E for Easy, M for Medium, H for Hard): "
             ).upper().strip()
 
             if level_choice not in level_table:
                 raise ValueError(
-                    "\n Invalid selection. Please only select "
+                    "Invalid selection. Please only select "
                     "'E' for Easy, 'M' for Medium, or 'H' for Hard.")
 
             chosen_level, _ = level_table[level_choice]
@@ -219,7 +227,7 @@ def main():
 
             print(
                 f"""
-                    \n Instructions: You have 7 tries to guess a
+                    Instructions: You have 7 tries to guess a
                     {word_length}-letter word.
                     """
             )
