@@ -53,9 +53,21 @@ I opted to create the Python code using the programming paradigm, object-oriente
 
 ## Features
 
-1. Landing page
+1. Opening Screen
 
    - 
+
+1. Level Selection & Warnings
+
+    - 
+
+1. Errors, Warnings, & Text Dispaly
+
+    - 
+
+ 1. Winning or Lossing the Game
+
+    - 
  
 ---
 
@@ -74,12 +86,18 @@ I opted to create the Python code using the programming paradigm, object-oriente
     + [GitHub](https://github.com/): This was used to host the source code of the website
     + [GitHub Pages](https://github.com/Ajfriel86/PilatesParadise/settings/pages): This was used to publish the files that were pushed to the repository
     + [VSCode](https://code.visualstudio.com/): This was the IDE used to develop the website
-  
+    + [Heroku](https://dashboard.heroku.com/apps): This was used to deply the application
 
+- ### Packages
+
+    + [OS](https://docs.python.org/3/library/os.html ) : This module is built in and provides a portable way of using operating system dependent functionality. This was used to create the clear_screen() function.
+    + [Random](https://docs.python.org/3/library/random.html) : This module is built in and implements pseudo-random number generators for various distributions. Specifically for this project, it was used to selected a random word from words.py, depending on the level selected by the user.
+    + [Time](https://docs.python.org/3/library/time.html) : This module is built in and provides various time-related functions. The sleep function of Time was used to delay the clear_screen() function so the errors messages where dispalyed long enough for the user to read. 
+    + [Colorama](https://pypi.org/project/colorama/) : This module is a third party module and was used to colour the text in the terminal window. 
 ---
 
 
-### Implementation of Design
+### Flow Chart
 
 
 ## Testing
