@@ -98,20 +98,20 @@ class Hangman:
             try:
                 guess = input(
                     f"""
-                    {Fore.GREEN}Guess a letter: 
+                    {Fore.GREEN}\n Guess a letter: 
                     """
                 ).lower().strip()
                 if len(guess) != 1 or not guess.isalpha():
                     raise ValueError(
                         f"""
-                        {Fore.RED}Please enter a single letter only and 
+                        {Fore.RED}\n Please enter a single letter only and 
                         no numbers or special characters.
                         """ + Style.RESET_ALL
                     )
                 if guess in self.guessed_letters:
                     raise ValueError(
                         f"""
-                        {Fore.RED}You already guessed that letter. 
+                        {Fore.RED}\n You already guessed that letter. 
                         Try another one.
                         """ + Style.RESET_ALL
                     )
@@ -119,7 +119,7 @@ class Hangman:
                 if guess in self.word:
                     print(
                         f"""
-                        {Fore.GREEN}Correct! You got a letter!!
+                        {Fore.GREEN}\n Correct! You got a letter!!
                         """ + Style.RESET_ALL
                     )
                 else:
@@ -127,13 +127,13 @@ class Hangman:
                     print(
                         f"""
                         {Fore.RED}
-                        Wrong! You have {self.attempts} attempts left.
+                        \n Wrong! You have {self.attempts} attempts left.
                         """ + Style.RESET_ALL
                     )
                 if "_" not in self.display_word():
                     print(
                         f"""
-                        {Fore.GREEN}Congratulations, you've guessed the word!
+                        {Fore.GREEN}\n Congratulations, you've guessed the word!
                         The word was :
                         """ + self.word + Style.RESET_ALL
                     )
@@ -141,7 +141,7 @@ class Hangman:
                 if self.attempts == 0:
                     print(
                         f"""
-                        {Fore.RED}Sorry, you've run out of attempts.
+                        {Fore.RED}\n Sorry, you've run out of attempts.
                         The word was:
                         """ + self.word + Style.RESET_ALL
                     )
@@ -154,7 +154,7 @@ class Hangman:
 
         play_again = input(
             f"""
-            {Fore.GREEN}Do you want to play again? (y/n): "
+            {Fore.GREEN}\n Do you want to play again? (y/n): "
             """ + Style.RESET_ALL
         ).lower().strip()
         play_game_menu = True
@@ -164,17 +164,17 @@ class Hangman:
                 return True
             elif play_again == 'n':
                 play_game_menu = False
-                print(f"{Fore.GREEN}Thank you for playing Hangman!")
+                print(f"{Fore.GREEN}\n Thank you for playing Hangman!")
                 return False
             else:
                 print(
                     f"""
-                    {Fore.RED}Invalid input, please just select y/n.
+                    {Fore.RED}\n Invalid input, please just select y/n.
                     """ + Style.RESET_ALL
                 ).strip()
                 play_again = input(
                     f"""
-            {Fore.GREEN}Do you want to play again? (y/n): "
+            {Fore.GREEN}\n Do you want to play again? (y/n): "
             """ + Style.RESET_ALL
                 ).lower().strip()
 
@@ -194,12 +194,12 @@ def main():
         try:
             display_level_table()
             level_choice = input(
-                "Choose a level (E for Easy, M for Medium, H for Hard): "
+                "\n Choose a level (E for Easy, M for Medium, H for Hard): "
             ).upper().strip()
 
             if level_choice not in level_table:
                 raise ValueError(
-                    "Invalid selection. Please only select "
+                    "\n Invalid selection. Please only select "
                     "'E' for Easy, 'M' for Medium, or 'H' for Hard.")
 
             chosen_level, _ = level_table[level_choice]
@@ -218,7 +218,7 @@ def main():
 
             print(
                 f"""
-                    Instructions: You have 6 tries to guess a
+                    \n Instructions: You have 6 tries to guess a
                     {word_length}-letter word.
                     """
             )
