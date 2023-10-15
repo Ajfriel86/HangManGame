@@ -108,7 +108,6 @@ class Hangman:
                         no numbers or special characters.
                         """ + Style.RESET_ALL
                     )
-                sleep(2)
                 clear_screen()
                 if guess in self.guessed_letters:
                     raise ValueError(
@@ -117,7 +116,6 @@ class Hangman:
                         Try another one.
                         """ + Style.RESET_ALL
                     )
-                sleep(2)
                 clear_screen()
                 self.guessed_letters.append(guess)
                 if guess in self.word:
@@ -134,7 +132,6 @@ class Hangman:
                         \n Wrong! You have {self.attempts} attempts left.
                         """ + Style.RESET_ALL
                     )
-                    sleep(2)
                     clear_screen()
                 if "_" not in self.display_word():
                     print(
@@ -143,7 +140,6 @@ class Hangman:
                         The word was :
                         """ + self.word + Style.RESET_ALL
                     )
-                    sleep(2)
                     clear_screen()
                     break
                 if self.attempts == 0:
@@ -153,7 +149,6 @@ class Hangman:
                         The word was:
                         """ + self.word + Style.RESET_ALL
                     )
-                    sleep(2)
                     clear_screen()
                     break
             except ValueError as e:
