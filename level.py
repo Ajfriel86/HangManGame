@@ -6,6 +6,7 @@ It is then imported into run.py
 """
 from colorama import Fore
 
+
 level_table = {
     "E": ("Easy", "3 Letter words"),
     "M": ("Medium", "5 Letter words"),
@@ -21,6 +22,5 @@ def display_level_table():
     print(f"{Fore.GREEN}| Code | Level  | Description        |")
     print("|------|--------|--------------------|")
     for code, (level, description) in level_table.items():
-        print(
-            f"|{Fore.GREEN}{code}     | {level:<6} | {description:<18} |")
-    print(f"{Fore.GREEN}|------|--------|--------------------|")
+        print(f"|{Fore.GREEN}{code}     | {level:<6} | {description:<18} |")
+    print("|------|--------|--------------------|")
