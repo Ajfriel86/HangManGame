@@ -218,7 +218,7 @@ def main():
 
             print(
                 f"""
-                    \n Instructions: You have 6 tries to guess a
+                    \n Instructions: You have 7 tries to guess a
                     {word_length}-letter word.
                     """
             )
