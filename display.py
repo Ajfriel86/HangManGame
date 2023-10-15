@@ -11,6 +11,7 @@ def display_hangman(attempts):
     based on the number of attempts left.
     """
     # This is the list of hangman stages
+
     hang = [
         """
         +---+
