@@ -1,4 +1,4 @@
-# Reel Of Fortune
+# Hangman
 [View The Deployed Site Here](https://hangman-gamer-fa003c400c0e.herokuapp.com/)
 
 ## About
@@ -60,14 +60,6 @@ I opted to create the Python code using the programming paradigm, object-oriente
   
 
 ---
-## Design
-
-### Wireframes
-
-#### Landing page:
-
-
-#### Game page:
 
 
 ### Implementation of Design
@@ -79,8 +71,6 @@ I opted to create the Python code using the programming paradigm, object-oriente
 
 
 ### Performance
-
-### Responsive Design
 
 
 ### Validation
