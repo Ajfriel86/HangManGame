@@ -32,7 +32,24 @@ I opted to create the Python code using the programming paradigm, object-oriente
 
 1. As a site owner, I would like game rules/instructions to be displayed for site users to know how the game is played
 
----
+--
+## How To Play
+
+- The first screen display the various game levels, Easy, Medium & Hard.
+    - Easy mode is for guessing 3 letter words in 7 attempts.
+    - Medium Mode is for guessing 5 letter words in 7 attempts.
+    - Hard mode is for guessing 7 letter words in 7 attempts. 
+- The user then selects which level the wish to play by type eitherr, e, m, or h.
+    - e = Easy
+    - m = Medium
+    - h = Hard
+- Once the user has selcted their game level they wish to play the instructions are displayed for that level.
+- Also displayed is a welcome message, the gallows, the correct number of underscores ( _ )  for that level to dictate the empty word, a prompt asking the user to guess a letter, and an input for the user to enter a letter of their choice.
+- Once the user guesses a correct letter & enters it, a congratulations message is displayed. 
+- If the user enters a number, more than one letter, or a special character, an error message is displayed.
+- If the user guesses the correct word, a congratulations message is displayed.
+- If the user does not guess the correct word a warning message is displayed. 
+- At the end of the game the user can decided if they wish to replay the game or not. 
 
 ## Features
 
