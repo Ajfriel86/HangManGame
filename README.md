@@ -55,20 +55,44 @@ I opted to create the Python code using the programming paradigm, object-oriente
 
 1. Opening Screen
 
-   - 
+![Main Screen](./documentation/main_screen.png)
 
-1. Level Selection & Warnings
+2. Playing ~The Games
 
-    - 
+![Game Play](./documentation/game_play.png)
 
-1. Errors, Warnings, & Text Dispaly
+3. Errors, Warnings, & Text Dispaly
 
-    - 
+- Entering a Number:
 
- 1. Winning or Lossing the Game
+![Entering a Number](./documentation/wrong_one.png)
 
-    - 
- 
+- Entering a Special Charater:
+
+![Entering a Special Charater](./documentation/wrong_two.png)
+
+- Guessing the Wrong Letter:
+
+![Wrong Letter](./documentation/wrong_letter.png)
+
+- Guessing the Correct Letter:
+
+![Right Letter](./documentation/correct_letter.png)
+
+ 4. Winning or Lossing the Game
+
+- Losing the Game:
+
+![Lost Game](./documentation/lost_game.png)
+
+- Winning the Game:
+
+![Game Won](./documentation/game_win.png)
+
+5. Play Again
+
+![Play Again](./documentation/play_again.png)
+
 ---
 
 ## Technologies used
@@ -87,6 +111,7 @@ I opted to create the Python code using the programming paradigm, object-oriente
     + [GitHub Pages](https://github.com/Ajfriel86/PilatesParadise/settings/pages): This was used to publish the files that were pushed to the repository
     + [VSCode](https://code.visualstudio.com/): This was the IDE used to develop the website
     + [Heroku](https://dashboard.heroku.com/apps): This was used to deply the application
+    + [Miro](https://miro.com/) : This was used to create the flowchart
 
 - ### Packages
 
@@ -98,6 +123,8 @@ I opted to create the Python code using the programming paradigm, object-oriente
 
 
 ### Flow Chart
+
+![Flowchart](./documentation/flowchart.png)
 
 
 ## Testing
