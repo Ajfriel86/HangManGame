@@ -183,7 +183,7 @@ class Hangman:
                 ).strip()
                 play_again = input(
                     f"""
-            {Fore.GREEN}Do you want to play again? (y/n): "
+            {Fore.GREEN}Do you want to play again? (y/n):
             """ + Style.RESET_ALL
                 ).lower().strip()
 
