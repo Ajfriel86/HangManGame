@@ -142,13 +142,38 @@ I opted to create the Python code using the programming paradigm, object-oriente
 
 ## Deployment
 
-### Deployment to Git Hub Pages
+This website was constructed in VS Code and deployed on [Heroku](https://www.heroku.com/)
 
-This website was constructed in VS Code and deployed on Heroku. The steps taken to deploy this website from its [GitHub Repository](https://github.com/Ajfriel86/HangManGame) are as follows:
+### Deployment to Heroku
+#### Activating your Heroku Student Pack
+
+- Navigate to https://www.heroku.com/github-students
+- Click “Get the student offer”
+- Login with Heroku if necessary
+- Click “Verify with GitHub”
+- Click “Authorize heroku”
+- In order to receive the Heroku credits, payment details are required.
+- In the new tab, click “Add credit card”.
+- Enter your payment details as requested and then head back to the Heroku sign up process
+- Enter your details, ensuring to put “Code Institute” as your School name, heed the warning and then click “Send”
+- Read Heroku’s terms and click “Agree” to continue
+- A thank you message will be shown, indicating that it can take up to 24 hours for the request to be processed
+
+#### Adding an App to Heroku
+
+- On the main page of your Heroku account, select the "New" tab
+- Then select "Create New App"
+- Add an "App-Name"
+- On the newly available page, selcet your deplyment method as GitHub and connect to this
+- Enter in the REpo of your project you wish to host on Herko
+- Once it is connected, you can then choose "Automatic Deploys" This will automatucally update your application on every push
+- The app is now hosted on Heroku [here](https://hangman-gamer-fa003c400c0e.herokuapp.com/)
+
+### Deployment to Git Hub Pages
 
 - Log into GitHub
 - Go to the list of repositories on the left-hand side of the screen
-- Click on the repository - [Hangman]()
+- Click on the repository - [Hangman](https://github.com/Ajfriel86/HangManGame)
 - Choose the settings tab from the menu items across the top of the page; it is the 9th tab on the menu items list.
 - Under 'Code and automation,' the last choice on the list is 'Pages'
 - In the 'Source' section, choose 'Deploy from a branch'
@@ -173,9 +198,12 @@ These steps can where found in the help documentation for GitHub here:
 
 ## Credits
 
-   - [CPPSecrets](https://cppsecrets.com/users/5617971101051071011161151049711410997484852494964103109971051084699111109/Hangman-Game-using-Python.php): This site was the inspiration for creating this hangman game.
-   - [Simple-Terminal-Window](https://pypi.org/project/simple-term-menu/): This creates simple menus for interactive command line programs
-   - [Random](https://docs.python.org/3/library/random.html): This was used to help select a random word from the word dictionary file
-   - [Gitnux](https://blog.gitnux.com/code/python-clear-console/): This was used to help clear the terminal window
-   - [Iuliia Konovalova](https://github.com/IuliiaKonovalova): I would like to give credit to my mentor for her guidance and inspiration while completing this project. Iuliia helped to point me in the direction that I needed to complete this project
+- [CPPSecrets](https://cppsecrets.com/users/5617971101051071011161151049711410997484852494964103109971051084699111109/Hangman-Game-using-Python.php) : This site was the inspiration for creating this hangman game
+- [How to build HANGMAN with Python in 10 MINUTES](https://www.youtube.com/watch?v=m4nEnsavl6w) : This was used to help with understanding the game in greatrer detail while using Python to create the game
+- [How To Print Colored Text in Python (Colorama Tutorial)](https://www.youtube.com/watch?v=u51Zjlnui4Y) : This was used to help understand the use of colorama for changing the colour of the text on the terminal screen
+- [Corey Schafer ](https://www.youtube.com/@coreyms) : Corey's YT channel was used to explore in greater detail the Python language and the use of OOP for this language
+- [Simple-Terminal-Window](https://pypi.org/project/simple-term-menu/) : This creates simple menus for interactive command line programs
+- [Random](https://docs.python.org/3/library/random.html) : This was used to help select a random word from the word dictionary file
+- [Gitnux](https://blog.gitnux.com/code/python-clear-console/) : This was used to help clear the terminal window
+- [Iuliia Konovalova](https://github.com/IuliiaKonovalova) : I would like to give credit to my mentor for her guidance and inspiration while completing this project. Iuliia helped to point me in the direction that I needed to complete this project
 
