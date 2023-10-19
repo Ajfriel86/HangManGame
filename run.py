@@ -92,12 +92,12 @@ class Hangman:
         print(Fore.GREEN + "Welcome to Hangman!")
         print(Style.RESET_ALL)
         while True:
-            print(Fore.GREEN
-                  + display_hangman(self.attempts) + Style.RESET_ALL)
-            print(Fore.GREEN + "\n"
-                  + self.display_word() + Style.RESET_ALL)
-            print(Fore.BLUE
-                  + self.display_guessed_letters() + Style.RESET_ALL)
+            print(
+                Fore.GREEN + display_hangman(self.attempts) + Style.RESET_ALL)
+            print(
+                Fore.GREEN + self.display_word() + Style.RESET_ALL)
+            print(
+                Fore.BLUE + self.display_guessed_letters() + Style.RESET_ALL)
             try:
                 guess = input(
                     f"""
