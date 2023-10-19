@@ -92,12 +92,12 @@ class Hangman:
         print(Fore.GREEN + "Welcome to Hangman!")
         print(Style.RESET_ALL)
         while True:
-            print(Fore.GREEN +
-                  display_hangman(self.attempts) + Style.RESET_ALL)
-            print(Fore.GREEN + "\n" +
-                  self.display_word() + Style.RESET_ALL)
-            print(Fore.BLUE +
-                  self.display_guessed_letters() + Style.RESET_ALL)
+            print(Fore.GREEN
+                  + display_hangman(self.attempts) + Style.RESET_ALL)
+            print(Fore.GREEN + "\n"
+                  + self.display_word() + Style.RESET_ALL)
+            print(Fore.BLUE
+                  + self.display_guessed_letters() + Style.RESET_ALL)
             try:
                 guess = input(
                     f"""
@@ -159,33 +159,28 @@ class Hangman:
             sleep(2)
             clear_screen()
             continue
-
-        play_again = input(
-            f"""
-            {Fore.GREEN}Do you want to play again? (y/n): "
-            """ + Style.RESET_ALL
-        ).lower().strip()
-        play_game_menu = True
-        while play_game_menu:
-            if play_again == 'y':
-                play_game_menu = False
-                return True
-            elif play_again == 'n':
-                play_game_menu = False
-                print(
-                    f"{Fore.GREEN}Thank you for playing Hangman!")
-                return False
-            else:
-                print(
-                    f"""
-                    {Fore.RED}Invalid input, please just select y/n.
-                    """ + Style.RESET_ALL
-                ).strip()
+        while True:
+            try:
                 play_again = input(
                     f"""
-            {Fore.GREEN}Do you want to play again? (y/n):
-            """ + Style.RESET_ALL
+                    {Fore.GREEN}Do you want to play again? (y/n): "
+                    """ + Style.RESET_ALL
                 ).lower().strip()
+
+                if play_again == 'y':
+                    return True
+                elif play_again == 'n':
+                    print(
+                        f"{Fore.GREEN}Thank you for playing Hangman!")
+                    return False
+                else:
+                    raise ValueError(
+                        f"""
+                            {Fore.RED}Invalid input, please just select y (Yes) or n (No).
+                            """ + Style.RESET_ALL
+                    ).strip()
+            except ValueError as e:
+                print(f"{Fore.RED}{e}{Style.RESET_ALL}")
 
 
 def main():
@@ -234,7 +229,6 @@ def main():
 
             game = Hangman(level_words, word_length)
             play_again = game.play()
-
             if not play_again:
                 print("Thanks for playing! Goodbye.")
                 break
