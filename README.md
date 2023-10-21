@@ -155,10 +155,14 @@ I changed the error handling from an if/else statement to an exception and remov
 
 ![Bug](./documentation/bug_one.png)
 
+After correcting the above error, I ran into another issue. The final screen asking the user if they wish to play again was not using the clear_screen() function. The orignal error was addressed but the scrolling text took away from the resat of the game using clear_scrren() This was then added and it solved the issue.
+
+![Clear Screen](./documentation/clearscreen_error.png)
+
 While using OOP standard, I seperated the various parts of the code in to other documents. The words that were picked at random, the hangman figure to be diaplyed and the text box displayed at the start of the game that depicts the levels; these were all put into their own .py file.
 But, while trying to import functions from other .py documents I ran into some issues. It seems having a documents named with an underscorelike so, display_hangman.py, were causing difficuties while trying to import them
 
-![Import Error](./documentation/import%20error.png)
+![Import Error](./documentation/import_error.png)
 
 This was corrected by removing the underscore and ernaming the file:
 
