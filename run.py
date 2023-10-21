@@ -33,12 +33,12 @@ class Hangman:
 
     def __init__(self, words, level):
         """
-        This is the variable that stores 
+        This is the variable that stores
         the list of words,
         the level selected,
         the choosen word
         and guessed letters
-        that are passed to the 
+        that are passed to the
         hangman game
         """
         self.words = words
@@ -61,7 +61,7 @@ class Hangman:
 
     def display_guessed_letters(self):
         """
-        This function is for displaying the 
+        This function is for displaying the
         guessed letters by a user
         """
         if self.guessed_letters:
@@ -101,20 +101,20 @@ class Hangman:
             try:
                 guess = input(
                     f"""
-                    {Fore.GREEN}Guess a letter: 
+                    {Fore.GREEN}Guess a letter:
                     """
                 ).lower().strip()
                 if len(guess) != 1 or not guess.isalpha():
                     raise ValueError(
                         f"""
-                        {Fore.RED}Please enter a single letter only and 
+                        {Fore.RED}Please enter a single letter only and
                         no numbers or special characters.
                         """ + Style.RESET_ALL
                     )
                 if guess in self.guessed_letters:
                     raise ValueError(
                         f"""
-                        {Fore.RED}You already guessed that letter. 
+                        {Fore.RED}You already guessed that letter.
                         Try another one.
                         """ + Style.RESET_ALL
                     )
@@ -176,7 +176,8 @@ class Hangman:
                 else:
                     raise ValueError(
                         f"""
-                            {Fore.RED}Invalid input, please just select y (Yes) or n (No).
+                            {Fore.RED}Invalid input, please just select
+                            y (Yes) or n (No).
                             """ + Style.RESET_ALL
                     )
             except ValueError as e:
