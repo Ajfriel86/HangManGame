@@ -172,7 +172,7 @@ When creating the hangman icon's to be displayed I ran into an error using the b
 
 ![BackSlash](./documentation/pylint2.png)
 
-Testing the game on medium level I stumbled into this error. 
+Testing the game on medium level I stumbled into this error. This error is occurs when concatenating a string with a None value.
 
 - TypeError: can only concatenate str (not "NoneType") to str
 
@@ -181,8 +181,6 @@ Testing the game on medium level I stumbled into this error.
 This was resolved by adding the following piece of code:
 
 ![None Error](./documentation/none_error.png)
-
-
 
 
 ### Validation
