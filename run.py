@@ -178,7 +178,7 @@ class Hangman:
                         f"""
                             {Fore.RED}Invalid input, please just select y (Yes) or n (No).
                             """ + Style.RESET_ALL
-                    ).strip()
+                    )
             except ValueError as e:
                 print(f"{Fore.RED}{e}{Style.RESET_ALL}")
 
