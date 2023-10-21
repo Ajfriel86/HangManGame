@@ -156,7 +156,7 @@ class Hangman:
             except ValueError as e:
                 print(f"{Fore.RED}{e}{Style.RESET_ALL}")
 
-            sleep(2)
+            sleep(5)
             clear_screen()
             continue
         while True:
