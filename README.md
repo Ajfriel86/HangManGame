@@ -172,9 +172,17 @@ When creating the hangman icon's to be displayed I ran into an error using the b
 
 ![BackSlash](./documentation/pylint2.png)
 
-Testing the game on medium level I stumbled into this error
+Testing the game on medium level I stumbled into this error. 
 
-![Medium Error](./documentation/medium_error.pnggit add )
+- TypeError: can only concatenate str (not "NoneType") to str
+
+![Medium Error](./documentation/medium_error.png)
+
+This was resolved by adding the following piece of code:
+
+![None Error](./documentation/none_error.png)
+
+
 
 
 ### Validation
