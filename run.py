@@ -138,20 +138,20 @@ class Hangman:
                         f"""
                         {Fore.GREEN}Congratulations, you've guessed the word!
                         The word was :
-                        """ + self.word + Style.RESET_ALL +
-                        sleep(2) +
-                        clear_screen()
+                        """ + self.word + Style.RESET_ALL
                     )
+                    sleep(2)
+                    clear_screen()
                     break
                 if self.attempts == 0:
                     print(
                         f"""
                         {Fore.RED}Sorry, you've run out of attempts.
                         The word was:
-                        """ + self.word + Style.RESET_ALL +
-                        sleep(2) +
-                        clear_screen()
+                        """ + self.word + Style.RESET_ALL
                     )
+                    sleep(2)
+                    clear_screen()
                     break
             except ValueError as e:
                 print(f"{Fore.RED}{e}{Style.RESET_ALL}")
@@ -166,6 +166,14 @@ class Hangman:
                     {Fore.GREEN}Do you want to play again? (y/n):
                     """ + Style.RESET_ALL
                 ).lower().strip()
+
+                if play_again is None:
+                    raise ValueError(f"""
+                            {Fore.RED}Invalid input, please just select
+                            y (Yes) or n (No).
+                            """ + Style.RESET_ALL)
+
+                play_again = play_again.lower().strip()
 
                 if play_again == 'y':
                     return True
