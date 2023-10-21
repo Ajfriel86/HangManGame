@@ -51,6 +51,20 @@ I opted to create the Python code using the programming paradigm, object-oriente
 - If the user does not guess the correct word a warning message is displayed. 
 - At the end of the game the user can decided if they wish to replay the game or not. 
 
+## Wire Frames
+
+Opening screen will show a tabel that will outline the levels, easy, medium, hard. For each level the user must guess a 3, 5, 7 letter word in 7 attempts.
+
+![Wireframe One](./documentation/wire_one.png)
+
+The game play screen will show a gallows and have the game instructions depending on the level selected by the user.
+
+![Wireframe Two](./documentation/wire_two.png)
+
+Once the user has completed the game, they will be asked if they wish to play again
+
+![Wireframe Three](./documentation/wire_three.png)
+
 ## Features
 
 1. Opening Screen
