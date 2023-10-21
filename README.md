@@ -131,14 +131,45 @@ I opted to create the Python code using the programming paradigm, object-oriente
 
 ### Bugs
 
+Throughout compiling the projects code I ran tests to check all of the cose was meeting pep8 standards. Using a built-in pepe8 linter in VS I ran into a mountain of errors at the start. Most of which where using single backslashes and trailing whitespace. Other's "string statement has no effect." Which was related to my docstrings being used improperly. These were easy fixes.
 
-### Performance
+![Python Linter](./documentation/pylint.png)
+
+While testing the game I ran into a bug. Thius was at the end of the game when the user is asked if they will playing or not. 
+When entering anything other than the required fileds (y/n), an error was thrown. This was in relation to the .strip() function. 
+I changed the error handling from an if/else statement to an exception and removed the .strip() funstion.
+
+![Bug](./documentation/bug_one.png)
+
+While using OOP standard, I seperated the various parts of the code in to other documents. The words that were picked at random, the hangman figure to be diaplyed and the text box displayed at the start of the game that depicts the levels; these were all put into their own .py file.
+But, while trying to import functions from other .py documents I ran into some issues. It seems having a documents named with an underscorelike so, display_hangman.py, were causing difficuties while trying to import them
+
+![Import Error](./documentation/import%20error.png)
+
+This was corrected by removing the underscore and ernaming the file:
+
+![Import Fix](./documentation/import_fix.png)
+
+When creating the hangman icon's to be displayed I ran into an error using the backslashes for the arms and legs. A work around for this was to add a double backslash. This then removed the error and also only displayed one backslash. This error could have been due to the fact that a single backslash is used as an escape sequence. So a double backslash must be used to display a backslash.
+
+![BackSlash](./documentation/pylint2.png)
 
 
 ### Validation
 #### Python:
 
----
+To validate my code I used the Code Institute's PEP8 Python Linter: [CI Python Linter](https://pep8ci.herokuapp.com/)
+
+run.py
+- Trailing Whitespace found on run.py file
+![Run](./documentation/run_whitespace.png)
+
+- Run.py file with no errors:
+![Run No Errors](./documentation/run_no-errors.png)
+
+- All other files returned no errors:
+
+![All Clear](./documentation/all_clear.png)
 
 ## Deployment
 
