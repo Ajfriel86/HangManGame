@@ -241,7 +241,7 @@ def main():
             game = Hangman(level_words, word_length)
             play_again = game.play()
             if not play_again:
-                print("Thanks for playing! Goodbye.")
+                print("Goodbye.")
                 break
 
         except ValueError as e:
