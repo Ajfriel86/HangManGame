@@ -140,8 +140,6 @@ class Hangman:
                         The word was :
                         """ + self.word + Style.RESET_ALL
                     )
-                    sleep(2)
-                    clear_screen()
                     break
                 if self.attempts == 0:
                     print(
@@ -150,15 +148,13 @@ class Hangman:
                         The word was:
                         """ + self.word + Style.RESET_ALL
                     )
-                    sleep(2)
-                    clear_screen()
                     break
             except ValueError as e:
                 print(f"{Fore.RED}{e}{Style.RESET_ALL}")
-
-            sleep(5)
+            sleep(2)
             clear_screen()
             continue
+
         while True:
             try:
                 play_again = input(
@@ -167,7 +163,7 @@ class Hangman:
                     """ + Style.RESET_ALL
                 ).lower().strip()
 
-                if play_again is None:
+                if not play_again:
                     raise ValueError(f"""
                             {Fore.RED}Invalid input, please just select
                             y (Yes) or n (No).
@@ -186,12 +182,12 @@ class Hangman:
                         f"""
                             {Fore.RED}Invalid input, please just select
                             y (Yes) or n (No).
-                            """ + Style.RESET_ALL +
-                        sleep(2) +
-                        clear_screen()
+                            """ + Style.RESET_ALL
                     )
             except ValueError as e:
                 print(f"{Fore.RED}{e}{Style.RESET_ALL}")
+            sleep(2)
+            clear_screen()
 
 
 def main():
