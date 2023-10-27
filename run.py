@@ -89,9 +89,7 @@ class Hangman:
         It is responsible for the gameplay loop where
         the user guesses a letter from the hidden word
         """
-        print(f"""{Fore.GREEN}
-                        Welcome to Hangman!
-            """ + Style.RESET_ALL)
+        print(Fore.GREEN + "Welcome to Hangman!")
         print(Style.RESET_ALL)
         while True:
             print(
@@ -135,7 +133,7 @@ class Hangman:
                         Wrong! You have {self.attempts} attempts left.
                         """ + Style.RESET_ALL
                     )
-                if "            _" not in self.display_word():
+                if "_" not in self.display_word():
                     print(
                         f"""
                         {Fore.GREEN}Congratulations, you've guessed the word!
@@ -153,10 +151,10 @@ class Hangman:
                     break
             except ValueError as e:
                 print(f"{Fore.RED}{e}{Style.RESET_ALL}")
+
             sleep(2)
             clear_screen()
             continue
-
         while True:
             try:
                 play_again = input(
@@ -188,6 +186,7 @@ class Hangman:
                     )
             except ValueError as e:
                 print(f"{Fore.RED}{e}{Style.RESET_ALL}")
+
             sleep(2)
             clear_screen()
 
@@ -239,7 +238,7 @@ def main():
             game = Hangman(level_words, word_length)
             play_again = game.play()
             if not play_again:
-                print("Goodbye.")
+                print("Thanks for playing! Goodbye.")
                 break
 
         except ValueError as e:
