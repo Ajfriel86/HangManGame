@@ -228,18 +228,6 @@ This website was constructed in VS Code and deployed on [Heroku](https://www.her
 - Once it is connected, you can then choose "Automatic Deploys" This will automatucally update your application on every push
 - The app is now hosted on Heroku [here](https://hangman-gamer-fa003c400c0e.herokuapp.com/)
 
-### Deployment to Git Hub Pages
-
-- Log into GitHub
-- Go to the list of repositories on the left-hand side of the screen
-- Click on the repository - [Hangman](https://github.com/Ajfriel86/HangManGame)
-- Choose the settings tab from the menu items across the top of the page; it is the 9th tab on the menu items list.
-- Under 'Code and automation,' the last choice on the list is 'Pages'
-- In the 'Source' section, choose 'Deploy from a branch'
-- In the 'Branch' section, choose the branch you wish to deploy
-- Select, or click, the 'Save' button
-- A link to the deployed website is then displayed at the top of the page
-
 ### How To Clone a GitHub Repository
 
 - On GitHub.com, navigate to the main page of the repository
