@@ -89,7 +89,9 @@ class Hangman:
         It is responsible for the gameplay loop where
         the user guesses a letter from the hidden word
         """
-        print(Fore.GREEN + "Welcome to Hangman!")
+        print(f"""{Fore.GREEN}
+                        Welcome to Hangman!
+            """ + Style.RESET_ALL)
         print(Style.RESET_ALL)
         while True:
             print(
@@ -133,7 +135,7 @@ class Hangman:
                         Wrong! You have {self.attempts} attempts left.
                         """ + Style.RESET_ALL
                     )
-                if "_" not in self.display_word():
+                if "            _" not in self.display_word():
                     print(
                         f"""
                         {Fore.GREEN}Congratulations, you've guessed the word!
