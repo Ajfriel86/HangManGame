@@ -206,7 +206,7 @@ This website was constructed in VS Code and deployed on [Heroku](https://www.her
 ### Deployment to Heroku
 #### Activating your Heroku Student Pack
 
-- Navigate to https://www.heroku.com/github-students
+- Navigate to [Heroku - GitHub Student Pack](https://www.heroku.com/github-students)
 - Click “Get the student offer”
 - Login with Heroku if necessary
 - Click “Verify with GitHub”
@@ -222,10 +222,25 @@ This website was constructed in VS Code and deployed on [Heroku](https://www.her
 
 - On the main page of your Heroku account, select the "New" tab
 - Then select "Create New App"
+
+![HerokuOne](./documentation/heroku_one.png)
+
 - Add an "App-Name"
+
+![HerokuTwo](./documentation/heroku_two.png)
+
 - On the newly available page, selcet your deplyment method as GitHub and connect to this
-- Enter in the REpo of your project you wish to host on Herko
+
+![HerokuThree](./documentation/heroku_three.png)
+
+- Enter in the Repo of your project you wish to host on Herko
+
+![HerokuFour](./documentation/heroku_four.png)
+
 - Once it is connected, you can then choose "Automatic Deploys" This will automatucally update your application on every push
+
+![HerokuFive](./documentation/heroku_five.png)
+
 - The app is now hosted on Heroku [here](https://hangman-gamer-fa003c400c0e.herokuapp.com/)
 
 ### How To Clone a GitHub Repository
