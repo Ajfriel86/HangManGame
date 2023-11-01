@@ -155,8 +155,11 @@ class Hangman:
             sleep(2)
             clear_screen()
             continue
+
         while True:
             try:
+                sleep(2)
+                clear_screen()
                 play_again = input(
                     f"""
                     {Fore.GREEN}Do you want to play again? (y/n):
@@ -174,8 +177,9 @@ class Hangman:
                 if play_again == 'y':
                     return True
                 elif play_again == 'n':
+                    clear_screen()
                     print(
-                        f"{Fore.GREEN}Thank you for playing Hangman!")
+                        f"""{Fore.GREEN} Thank you for playing Hangman!""")
                     return False
                 else:
                     raise ValueError(
@@ -186,7 +190,6 @@ class Hangman:
                     )
             except ValueError as e:
                 print(f"{Fore.RED}{e}{Style.RESET_ALL}")
-
             sleep(2)
             clear_screen()
 
@@ -238,7 +241,7 @@ def main():
             game = Hangman(level_words, word_length)
             play_again = game.play()
             if not play_again:
-                print("Thanks for playing! Goodbye.")
+                print("         Goodbye.")
                 break
 
         except ValueError as e:
