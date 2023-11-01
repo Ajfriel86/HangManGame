@@ -35,7 +35,7 @@ I opted to create the Python code using the programming paradigm, object-oriente
 --
 ## How To Play
 
-- The first screen display the various game levels, Easy, Medium & Hard.
+- The first screen displays the various game levels, Easy, Medium & Hard.
     - Easy mode is for guessing 3 letter words in 7 attempts.
     - Medium Mode is for guessing 5 letter words in 7 attempts.
     - Hard mode is for guessing 7 letter words in 7 attempts. 
@@ -53,7 +53,7 @@ I opted to create the Python code using the programming paradigm, object-oriente
 
 ## Wire Frames
 
-Opening screen will show a tabel that will outline the levels, easy, medium, hard. For each level the user must guess a 3, 5, 7 letter word in 7 attempts.
+Opening screen will show a table that will outline the levels, easy, medium, hard. For each level the user must guess a 3, 5, 7 letter word in 7 attempts.
 
 ![Wireframe One](./documentation/wire_one.png)
 
@@ -71,19 +71,19 @@ Once the user has completed the game, they will be asked if they wish to play ag
 
 ![Main Screen](./documentation/main_screen.png)
 
-2. Playing ~The Games
+2. Playing The Games
 
 ![Game Play](./documentation/game_play.png)
 
-3. Errors, Warnings, & Text Dispaly
+3. Errors, Warnings, & Text Display
 
 - Entering a Number:
 
 ![Entering a Number](./documentation/wrong_one.png)
 
-- Entering a Special Charater:
+- Entering a Special Character:
 
-![Entering a Special Charater](./documentation/wrong_two.png)
+![Entering a Special Character](./documentation/wrong_two.png)
 
 - Guessing the Wrong Letter:
 
@@ -93,7 +93,7 @@ Once the user has completed the game, they will be asked if they wish to play ag
 
 ![Right Letter](./documentation/correct_letter.png)
 
- 4. Winning or Lossing the Game
+ 4. Winning or Losing the Game
 
 - Losing the Game:
 
@@ -117,7 +117,7 @@ Once the user has completed the game, they will be asked if they wish to play ag
 
 - ### Programming Paradigm
 
-    + [Object Orientated Programming](https://codeinstitute.net/ie/blog/object-oriented-programming/): This was the paradigm I chose to complete this project. It involves classes and methods that are accessed to complete tasks of a desired outcome. 
+    + [Object Oriented  Programming](https://codeinstitute.net/ie/blog/object-oriented-programming/): This was the paradigm I chose to complete this project. It involves classes and methods that are accessed to complete tasks of a desired outcome. 
 
 - ### Other tools:
 
@@ -130,8 +130,8 @@ Once the user has completed the game, they will be asked if they wish to play ag
 - ### Packages
 
     + [OS](https://docs.python.org/3/library/os.html ) : This module is built in and provides a portable way of using operating system dependent functionality. This was used to create the clear_screen() function.
-    + [Random](https://docs.python.org/3/library/random.html) : This module is built in and implements pseudo-random number generators for various distributions. Specifically for this project, it was used to selected a random word from words.py, depending on the level selected by the user.
-    + [Time](https://docs.python.org/3/library/time.html) : This module is built in and provides various time-related functions. The sleep function of Time was used to delay the clear_screen() function so the errors messages where dispalyed long enough for the user to read. 
+    + [Random](https://docs.python.org/3/library/random.html) : This module is built in and implements pseudo-random number generators for various distributions. Specifically for this project, it was used to select a random word from words.py, depending on the level selected by the user.
+    + [Time](https://docs.python.org/3/library/time.html) : This module is built in and provides various time-related functions. The sleep function of Time was used to delay the clear_screen() function so the errors messages were displayed long enough for the user to read. 
     + [Colorama](https://pypi.org/project/colorama/) : This module is a third party module and was used to colour the text in the terminal window. 
 ---
 
@@ -145,13 +145,13 @@ Once the user has completed the game, they will be asked if they wish to play ag
 
 ### Bugs
 
-Throughout compiling the projects code I ran tests to check all of the cose was meeting pep8 standards. Using a built-in pepe8 linter in VS I ran into a mountain of errors at the start. Most of which where using single backslashes and trailing whitespace. Other's "string statement has no effect." Which was related to my docstrings being used improperly. These were easy fixes.
+Throughout compiling the project's code I ran tests to check all of the cose was meeting pep8 standards. Using a built-in pep8 linter in VS I ran into a mountain of errors at the start. Most of which were using single backslashes and trailing whitespace. Other's "string statement has no effect." Which was related to my docstrings being used improperly. These were easy fixes.
 
 ![Python Linter](./documentation/pylint.png)
 
-While testing the game I ran into a bug. Thius was at the end of the game when the user is asked if they will playing or not. 
-When entering anything other than the required fileds (y/n), an error was thrown. This was in relation to the .strip() function. 
-I changed the error handling from an if/else statement to an exception and removed the .strip() funstion.
+While testing the game I ran into a bug. This was at the end of the game when the user is asked if they will play or not. 
+When entering anything other than the required fields (y/n), an error was thrown. This was in relation to the .strip() function. 
+I changed the error handling from an if/else statement to an exception and removed the .strip() function.
 
 ![Bug](./documentation/bug_one.png)
 
@@ -159,12 +159,12 @@ After correcting the above error, I ran into another issue. The final screen ask
 
 ![Clear Screen](./documentation/clearscreen_error.png)
 
-While using OOP standard, I seperated the various parts of the code in to other documents. The words that were picked at random, the hangman figure to be diaplyed and the text box displayed at the start of the game that depicts the levels; these were all put into their own .py file.
-But, while trying to import functions from other .py documents I ran into some issues. It seems having a documents named with an underscorelike so, display_hangman.py, were causing difficuties while trying to import them
+While using the OOP standard, I separated the various parts of the code in to other documents. The words that were picked at random, the hangman figure to be displayed and the text box displayed at the start of the game that depicts the levels; these were all put into their own .py file.
+But, while trying to import functions from other .py documents I ran into some issues. It seems having a documents named with an underscore like so, display_hangman.py, were causing difficulties while trying to import them
 
 ![Import Error](./documentation/import_error.png)
 
-This was corrected by removing the underscore and ernaming the file:
+This was corrected by removing the underscore and renaming the file:
 
 ![Import Fix](./documentation/import_fix.png)
 
@@ -172,7 +172,7 @@ When creating the hangman icon's to be displayed I ran into an error using the b
 
 ![BackSlash](./documentation/pylint2.png)
 
-Testing the game on medium level I stumbled into this error. This error is occurs when concatenating a string with a None value.
+Testing the game on medium level I stumbled into this error. This error occurs when concatenating a string with a None value.
 
 - TypeError: can only concatenate str (not "NoneType") to str
 
@@ -229,15 +229,15 @@ This website was constructed in VS Code and deployed on [Heroku](https://www.her
 
 ![HerokuTwo](./documentation/heroku_two.png)
 
-- On the newly available page, selcet your deplyment method as GitHub and connect to this
+- On the newly available page, select your deployment method as GitHub and connect to this
 
 ![HerokuThree](./documentation/heroku_three.png)
 
-- Enter in the Repo of your project you wish to host on Herko
+- Enter in the Repo of your project you wish to host on Heroku
 
 ![HerokuFour](./documentation/heroku_four.png)
 
-- Once it is connected, you can then choose "Automatic Deploys" This will automatucally update your application on every push
+- Once it is connected, you can then choose "Automatic Deploys" This will automatically update your application on every push
 
 ![HerokuFive](./documentation/heroku_five.png)
 
@@ -261,7 +261,7 @@ These steps can where found in the help documentation for GitHub here:
 ## Credits
 
 - [CPPSecrets](https://cppsecrets.com/users/5617971101051071011161151049711410997484852494964103109971051084699111109/Hangman-Game-using-Python.php) : This site was the inspiration for creating this hangman game
-- [How to build HANGMAN with Python in 10 MINUTES](https://www.youtube.com/watch?v=m4nEnsavl6w) : This was used to help with understanding the game in greatrer detail while using Python to create the game
+- [How to build HANGMAN with Python in 10 MINUTES](https://www.youtube.com/watch?v=m4nEnsavl6w) : This was used to help with understanding the game in greater detail while using Python to create the game
 - [How To Print Colored Text in Python (Colorama Tutorial)](https://www.youtube.com/watch?v=u51Zjlnui4Y) : This was used to help understand the use of colorama for changing the colour of the text on the terminal screen
 - [Corey Schafer ](https://www.youtube.com/@coreyms) : Corey's YT channel was used to explore in greater detail the Python language and the use of OOP for this language
 - [Simple-Terminal-Window](https://pypi.org/project/simple-term-menu/) : This creates simple menus for interactive command line programs
